@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Der-Vertretungsplan</title>
-        <link href="standart.css" rel="stylesheet" type="text/css" />
+        <link href="standard.css" rel="stylesheet" type="text/css" />
         <link href="style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
@@ -31,7 +31,12 @@
 
         <footer>
             <p>Alle Angaben ohne Gew&auml;hr.</p>
-            <script src="http://logging.ourstats.de/js.php?ID=719764&style=blue" type="text/javascript"></script><noscript><a href="http://stats.ourstats.de/?ID=719764" target="_blank"><img src="http://logging.ourstats.de/logging.php?ID=719764&js=0&style=blue" border="0" /></a></noscript>
+            <script src="http://logging.ourstats.de/js.php?ID=719764&amp;style=blue" type="text/javascript"/>
+            <noscript>
+                <a href="http://stats.ourstats.de/?ID=719764" target="_blank">
+                    <img src="http://logging.ourstats.de/logging.php?ID=719764&amp;js=0&amp;style=blue" border="0" />
+                </a>
+            </noscript>
         </footer>
     </body>
 </html>
