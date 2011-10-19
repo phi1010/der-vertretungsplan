@@ -31,10 +31,10 @@
 
         <footer>
             <p>Alle Angaben ohne Gew&auml;hr.</p>
-            <script src="http://logging.ourstats.de/js.php?ID=719764&amp;style=blue" type="text/javascript"/>
+            <script src="http://logging.ourstats.de/js.php?ID=719764&style=blue" type="text/javascript"/>
             <noscript>
                 <a href="http://stats.ourstats.de/?ID=719764" target="_blank">
-                    <img src="http://logging.ourstats.de/logging.php?ID=719764&amp;js=0&amp;style=blue" border="0" />
+                    <img src="http://logging.ourstats.de/logging.php?ID=719764&js=0&style=blue" border="0" />
                 </a>
             </noscript>
         </footer>
