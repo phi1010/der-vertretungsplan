@@ -17,7 +17,7 @@
     	<ul>
         	<li><a href="">Aktualisieren</a></li>
             <li><a href="http://piratepad.net/S9HdHIJRYB" target="_blank">AN DER ENTWICKLUNG DES VERTRETUNGSPLANES MITWIRKEN!</a></li>
-            <li><a href=""></a></li>
+            <li><a href="https://github.com/phi1010/der-vertretungsplan">github</a></li>
 		</ul>
     </nav>
 	<section>
