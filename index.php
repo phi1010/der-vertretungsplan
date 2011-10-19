@@ -17,7 +17,7 @@
     	<ul>
         	<li><a href="">Aktualisieren</a></li>
             <li><a href="http://der-vertretungsplan.ietherpad.com/1" target="_blank">an der Entwicklung des Vertretungsplanes mitwirken!</a></li>
-            <li><a href="https://github.com/phi1010/der-vertretungsplan">github</a></li>
+            <li><a href="https://github.com/phi1010/der-vertretungsplan" target="_blank">GITHUB</a></li>
 		</ul>
     </nav>
 	<section>
