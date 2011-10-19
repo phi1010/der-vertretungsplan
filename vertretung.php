@@ -61,7 +61,11 @@ function vertretungen() {
     }
 }
 
-function getDayNumberString($numberOfDays) {//int -> string
+/**
+ * @param integer $numberOfDays
+ * @return string 
+ */
+function getDayNumberString($numberOfDays) {
     switch ($numberOfDays) {
         case 0:
             return "Heute";
@@ -78,17 +82,23 @@ function getDayNumberString($numberOfDays) {//int -> string
     }
 }
 
-function dateDiffInDays($a, $b) {//date,date -> int
-    //Durch das Addieren von 24h und Abrunden passiert folgendes:
-    //12h bis Mitternach: 1 Tag = Morgen
-    //Mitternacht: 1 Tag = Morgen
-    //Nach Mitternacht: 0 Tage = Heute
-    //+1 nach dem Dividieren will ich nicht riskieren, das könnte einen BufferOverflow bei negativen Datumswerten ergeben.
-
-    return floor(($b - $a + (24 * 60 * 60)) / (24 * 60 * 60));
+/**
+ * Gibt den Unterschied zwischen 2 Datumsweren in angebrochenen Tagen zurück.
+ * @param integer $a UNIX Timestamp
+ * @param integer $b UNIX Timestamp
+ * @return integer
+ */
+function dateDiffInDays($a, $b) {
+    $_24hours = 24 * 60 * 60;
+    return ceil(($b - $a) / $_24hours);
 }
 
-function timestamp($text) {//string -> int
+/**
+ *
+ * @param string $text Datum im deutschen Format: "24.12.2000"
+ * @return integer UNIX Timestamp
+ */
+function timestamp($text) {
     //Quelle RegEx: http://www.php-resource.de/forum/showthread/t-13403.html
     //Erst dt. Datum in en. Datum wandeln
     return strtotime(preg_replace("#([0-9]{2})\.([0-9]{2})\.([0-9]{4})#", "\\3-\\2-\\1", $text));
@@ -170,6 +180,10 @@ function display($array) {
     }
 }
 
+/**
+ * @param string $day Mon/Tue/Wed/Thu/Fri
+ * @return string 
+ */
 function generate_url($day) {
     $url = "http://asg-er.dyndns.org/vertretung/students/schuelerplan_";
     switch ($day) {
