@@ -8,9 +8,7 @@
     </head>
     <body>
         <section>
-            <table class="border-radius nav">
-                <?php include("vertretung.php"); ?>
-            </table>
+            <?php include("vertretung.php"); ?>
         </section>
         <footer>
             <p>Alle Angaben ohne Gew&auml;hr.</p>
