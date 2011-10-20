@@ -8,7 +8,9 @@
     </head>
     <body>
         <section>
-            <?php include("vertretung.php"); ?>
+            <table class="nav">
+                <?php include("vertretung.php"); ?>
+            </table>
         </section>
         <footer>
             <p>Alle Angaben ohne Gew&auml;hr.</p>
