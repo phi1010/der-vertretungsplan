@@ -7,7 +7,7 @@ header, footer, section, article, aside, nav {
 }
 body {
     margin: 0 auto;
-    width: 500px;
+    width: 490px;
 }
 nav+section {
     overflow: hidden;

@@ -138,7 +138,7 @@ function parse($day) {
     $ersetzen = array("<td>" => "<td class = \"TabelleMitteilung\" colspan=\"8\">");
     $url = generate_url($day);
     $file = @fopen($url, "r");
-    if ((@fopen($url, "r") != false)) {
+    if ($file != false) {
         while ((!feof($file)) && ($break == false)) {
             $str = fgets($file);
             // parsen der Mitteilungen
