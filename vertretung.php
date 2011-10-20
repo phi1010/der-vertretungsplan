@@ -3,6 +3,7 @@
 vertretungen();
 
 function vertretungen() {
+    
     $h2_start = "<td class = \"Ueberschrift\" colspan=\"8\"><h2>";
     $h2_ende = "</h2></td>";
     $i = 0;
@@ -124,7 +125,14 @@ function get_date($day) {
     return false;
 }
 
+/**
+ *
+ * @param string $day Mon/Tue/Wed/Thu/Fri
+ * @return array (integer => string) 
+ */
 function parse($day) {
+    
+    
     $break = false;
     $i = 0;
     $ersetzen = array("<td>" => "<td class = \"TabelleMitteilung\" colspan=\"8\">");
