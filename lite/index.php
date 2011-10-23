@@ -9,7 +9,7 @@
     <body>
         <section>
             <table class="nav">
-                <?php include("vertretung.php"); ?>
+                <?php include("../vertretung.php"); ?>
             </table>
         </section>
         <footer>
