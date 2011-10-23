@@ -14,6 +14,7 @@
         </section>
         <footer>
             <p>Alle Angaben ohne Gew&auml;hr.</p>
+            <p>Beim Besuch dieser Website werden IP-Adresse, Bildschirmgr&ouml;&szlig;e, Browserversion und &auml;hnliche Informationen erfasst, um eine &ouml;ffentliche Statistik zu erstellen.</p>
             <script src="http://logging.ourstats.de/js.php?ID=719764&style=blue" type="text/javascript"></script>
             <noscript>
                 <a href="http://stats.ourstats.de/?ID=719764" target="_blank">
