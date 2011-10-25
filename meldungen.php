@@ -5,15 +5,15 @@ meldungen_termine();
 function meldungen_termine() {
     $termine = "<p><span style=\"FONT-WEIGHT: bold\">Termine:</span></p>";
     $array = fill_array();
-    $i = 10;
-    $array_length = count($array) - 4;
+    $i = 0;
+    $array_length = count($array)-4;
 
     while ($array_length > $i) {
         $char = $array[$i];
         $i++;
         $termine = $termine . $char;
     }
-    echo ($termine) . "<br><br><br>" . "Script Version: 0.1 BETA <br> Diese Seite befindet sich noch im Aufbau. Daher sind Darstellungsfehler und Fehlfunktionen nicht auszuschlie&szlig;en. Benutzer des Internet Explorers werden gebeten einen modernen Browser zu verwenden.";
+    echo ($termine) . "(Quelle: <a href=\"http://www.asg-er.de/\" target=\"_blank\">http://asg-er.de</a>)" . "</br></br>" . "<p>Script Version: 0.1 BETA <br> Diese Seite befindet sich noch im Aufbau. Daher sind Darstellungsfehler und Fehlfunktionen nicht auszuschlie&szlig;en. Benutzer des Internet Explorers werden gebeten einen modernen Browser zu verwenden.</p>";
 }
 
 function skip($array, $i, $array_length) {
@@ -28,7 +28,8 @@ function skip($array, $i, $array_length) {
 
 function fill_array() {
     $break = false;
-    $i = 0;
+    $start = false;
+    $i = 3;
     $file = fopen("http://www.asg-er.de/", "r") or exit("Unable to open file!");
     while ((!feof($file) && ($break == false))) {
         $char = fgetc($file);
@@ -49,8 +50,24 @@ function fill_array() {
                                     if ($char == "e") {
                                         $char = fgetc($file);
                                         if ($char == "<") {
-                                            $char = fgetc($file);
-                                            while ((!feof($file) && ($break == false))) {
+
+                                            while ((!feof($file) && ($start == false))) {
+                                                $char = fgetc($file);
+                                                if ($char == "<") {
+                                                    $char = fgetc($file);
+                                                    if ($char == "p") {
+                                                        $char = fgetc($file);
+                                                        if ($char == ">") {
+                                                            $array[0] = "<";
+                                                            $array[1] = "p";
+                                                            $array[2] = ">";
+                                                            $start = true;
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            while ((!feof($file) && ($break == false) && ($start == true))) {
                                                 $char = fgetc($file);
                                                 $array[$i] = $char;
                                                 $i++;
