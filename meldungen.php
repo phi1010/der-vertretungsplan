@@ -26,7 +26,6 @@ function termine() {
                                     if ($char == "e") {
                                         $char = fgetc($file);
                                         if ($char == "<") {
-
                                             while (!feof($file) && ($break == false)) {
                                                 $char = fgetc($file);
                                                 if ($char == "<") {
@@ -37,7 +36,6 @@ function termine() {
                                                             $termine = $termine . "<p>";
                                                             while ((!feof($file) && ($break == false))) {
                                                                 $char = fgetc($file);
-
                                                                 if (($char != "<") && (!feof($file))) {
                                                                     $termine = $termine . $char;
                                                                 } else {

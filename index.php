@@ -23,7 +23,12 @@
         </nav>
         <section>
             <table class="border-radius nav">
-                <?php include("vertretung.php"); ?>
+                <?php
+                //$beginn = microtime(true); //Starten der Zeitmessung
+                include("vertretung.php");
+                //$dauer = sprintf('%.3f', (microtime(true) - $beginn));
+                //echo "Verarbeitung des Skripts: $dauer Sek.";
+                ?>
             </table>
         </section>
         <aside>

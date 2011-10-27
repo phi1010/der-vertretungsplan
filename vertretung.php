@@ -109,7 +109,7 @@ function get_date($day) {
     $break = false;
     $url = generate_url($day);
     $file = @fopen($url, "r");
-    if ((@fopen($url, "r") != false)) {
+    if (($file != false)) {
         while ((!feof($file)) && ($break == false)) {
             $str = fgets($file);
             if (strpos($str, "</h2>") != false) {
