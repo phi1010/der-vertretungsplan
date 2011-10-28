@@ -5,9 +5,43 @@ parseReplacements(urlReplacements("Thu"));
 
 function parseReplacements($url) {
     $filecontent = file_get_contents($url);
-    $filecontent = preg_replace(array('#<meta([^>]*)>#i', '#<br\s*>#i'), array('<meta$1/>', '<br/>'), $filecontent);
+    $filecontent = preg_replace(array('#<meta([^>]*)>#i', '#<br\s*>#i'), array('', '<br/>'), $filecontent);
+    //echo $filecontent;
     $doc = new DOMDocument();
-    $loadHTML = $doc->loadHTML($filecontent);
-    echo var_dump($doc);
+    $doc->loadHTML($filecontent);
+    echo tree($doc);
 }
+
+
+/**
+ * Nur zum Testen.
+ * Quelle: http://abeautifulsite.net/blog/2007/06/php-file-tree/
+ * @param type $element
+ * @return string 
+ */
+function tree($element) {
+    $res = "";
+    $nodelist = $element->childNodes;
+    $attriblist = $element->attributes;
+
+    if (count($nodelist) + count($attriblist) > 0) {
+        $res .= "<ul>";
+        foreach ($attriblist as $_ => $attribute) {
+            $res .= "<li> <div style=\"font-style: italic;\">" . htmlspecialchars($attribute->name . ': ' . $attribute->value) . "</div></li>";
+        }
+        foreach ($nodelist as $node) {
+            if ($node instanceof DOMText) {
+                if (!preg_match('/^[\s]*$/', $node->wholeText))
+                    $res .= "<li> <div style=\"color: navy;\">" . htmlspecialchars($node->wholeText) . "</div>";
+            } else {
+                $res .= "<li> <div style=\"font-weight: bold;\">" . htmlspecialchars($node->nodeName) . "</div>";
+                $res .= tree($node);
+                $res .= "</li>";
+            }
+        }
+        $res .= "</ul>";
+    }
+    return $res;
+}
+
 ?>
