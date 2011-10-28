@@ -9,7 +9,7 @@ function parseReplacements($url) {
     //echo $filecontent;
     $doc = new DOMDocument();
     $doc->loadHTML($filecontent);
-    echo tree($doc);
+    echo tree($doc->documentElement);
 }
 
 
@@ -21,15 +21,15 @@ function parseReplacements($url) {
  */
 function tree($element) {
     $res = "";
-    $nodelist = $element->childNodes;
-    $attriblist = $element->attributes;
+    $nodeList = $element->childNodes;
+    $attribList = $element->attributes;
 
-    if (count($nodelist) + count($attriblist) > 0) {
+    if (count($nodeList) + count($attribList) > 0) {
         $res .= "<ul>";
-        foreach ($attriblist as $_ => $attribute) {
-            $res .= "<li> <div style=\"font-style: italic;\">" . htmlspecialchars($attribute->name . ': ' . $attribute->value) . "</div></li>";
+        foreach ($attribList as $attrib) {
+            $res .= "<li> <div style=\"font-style: italic;\">" . htmlspecialchars($attrib->name . ': ' . $attrib->value) . "</div></li>";
         }
-        foreach ($nodelist as $node) {
+        foreach ($nodeList as $node) {
             if ($node instanceof DOMText) {
                 if (!preg_match('/^[\s]*$/', $node->wholeText))
                     $res .= "<li> <div style=\"color: navy;\">" . htmlspecialchars($node->wholeText) . "</div>";
