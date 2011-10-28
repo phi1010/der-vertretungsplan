@@ -1,7 +1,7 @@
 <?php
 
 include("URLs.php");
-parseReplacements(urlReplacements("Thu"));
+parseReplacements(urlReplacements("Tue"));
 
 function parseReplacements($url) {
     $filecontent = file_get_contents($url);
@@ -9,9 +9,20 @@ function parseReplacements($url) {
     //echo $filecontent;
     $doc = new DOMDocument();
     $doc->loadHTML($filecontent);
-    echo tree($doc->documentElement);
+    $html = $doc->documentElement;
+    //echo tree($html);
+    $body = $html->getElementsByTagName('body')->item(0);
+    $dateText ='';
+    foreach ($body->getElementsByTagName('center')->item(0)->getElementsByTagName('thead')->item(0)->getElementsByTagName('th') as $th)
+    {
+        if($th->getAttribute('class')=="TextAktuellesDatum")
+            echo $dateText = $th->textContent;
+    }
 }
 
+function parseReplacement($element) {
+    
+}
 
 /**
  * Nur zum Testen.
