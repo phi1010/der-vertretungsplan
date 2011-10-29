@@ -11,7 +11,7 @@ $urls = array(
     'Fri' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_fr.htm"
 );
 
-test();
+replacements_test();
 
 /**
  * Zeigt bei Aufruf mit den URL-Parametern 'all' oder 'day=(Mon|Tue|Wed|Thu|Fri)' das Ergebnis der Parsers an.
