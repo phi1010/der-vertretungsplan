@@ -11,19 +11,19 @@ $urls = array(
     'Fri' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_fr.htm"
 );
 
-replacements_test();
+//replacementsParser_test();
 
 /**
  * Zeigt bei Aufruf mit den URL-Parametern 'all' oder 'day=(Mon|Tue|Wed|Thu|Fri)' das Ergebnis der Parsers an.
  * @global array $urls 
  */
-function replacements_test() {
+function replacementsParser_test() {
     global $urls;
 
     if (array_key_exists('day', $_GET))
-        echo '<pre>' . print_r(replacements_parseURL($urls[$_GET['day']]), true) . '</pre>';
+        echo '<pre>' . print_r(replacementsParser_parseURL($urls[$_GET['day']]), true) . '</pre>';
     else if (array_key_exists('all', $_GET))
-        echo '<pre>' . print_r(replacements_parse(), true) . '</pre>';
+        echo '<pre>' . print_r(replacementsParser_parse(), true) . '</pre>';
 }
 
 /**
@@ -31,11 +31,11 @@ function replacements_test() {
  * @global array $urls
  * @return array (array('DateChanged' => DateTime, 'Date' => DateTime, 'Notices' => array(string), 'Entries' => array(array('Course' => string, 'Lesson' => string, 'OldSubject' => string, 'NewTeacher' => string, 'NewSubject' => string, 'Room' => string, 'Instead' => string, 'Comment' => string))))
  */
-function replacements_parse() {
+function replacementsParser_parse() {
     global $urls;
     $res = array();
     foreach ($urls as $key => $value) {
-        $day = replacements_parseURL($value);
+        $day = replacementsParser_parseURL($value);
         if ($day != null)
             $res[$key] = $day;
     }
@@ -47,7 +47,7 @@ function replacements_parse() {
  * @param string $url
  * @return array ('DateChanged' => DateTime, 'Date' => DateTime, 'Notices' => array(string), 'Entries' => array(array('Course' => string, 'Lesson' => string, 'OldSubject' => string, 'NewTeacher' => string, 'NewSubject' => string, 'Room' => string, 'Instead' => string, 'Comment' => string))) 
  */
-function replacements_parseURL($url) {
+function replacementsParser_parseURL($url) {
     if ($url == null || $url == '')
         return null;
     $header = array();
@@ -59,7 +59,7 @@ function replacements_parseURL($url) {
     $doc->loadHTML($filecontent);
     if ($doc == false)
         return null;
-    return replacements_parseDocument($doc);
+    return replacementsParser_parseDocument($doc);
 }
 
 /**
@@ -67,7 +67,7 @@ function replacements_parseURL($url) {
  * @param DOMDocument $doc
  * @return array ('DateChanged' => DateTime, 'Date' => DateTime, 'Notices' => array(string), 'Entries' => array(array('Course' => string, 'Lesson' => string, 'OldSubject' => string, 'NewTeacher' => string, 'NewSubject' => string, 'Room' => string, 'Instead' => string, 'Comment' => string)))
  */
-function replacements_parseDocument($doc) {
+function replacementsParser_parseDocument($doc) {
     $res = array();
 
     $html = $doc->documentElement;
@@ -77,16 +77,16 @@ function replacements_parseDocument($doc) {
 
     $header = $body->getElementsByTagName('center')->item(0)->getElementsByTagName('thead')->item(0);
     $dateChanged = $header->getElementsByTagName('th')->item(2);
-    $res['DateChanged'] = replacements_parseDateTime($dateChanged->textContent);
+    $res['DateChanged'] = replacementsParser_parseDateTime($dateChanged->textContent);
 
     $title = $body->getElementsByTagName('h2')->item(0);
-    $res['Date'] = replacements_parseDate($title->textContent);
+    $res['Date'] = replacementsParser_parseDate($title->textContent);
 
     $notices = $body->getElementsByTagName('center')->item(1)->getElementsByTagName('table')->item(0)->getElementsByTagName('td')->item(0);
-    $res['Notices'] = replacements_parseNotices($notices);
+    $res['Notices'] = replacementsParser_parseNotices($notices);
 
     $entries = $body->getElementsByTagName('center')->item(2)->getElementsByTagName('table')->item(0);
-    $res['Entries'] = replacements_parseEntries($entries);
+    $res['Entries'] = replacementsParser_parseEntries($entries);
 
     return $res;
 }
@@ -96,7 +96,7 @@ function replacements_parseDocument($doc) {
  * @param DOMElement $element
  * @return array (array('Course' => string, 'Lesson' => string, 'OldSubject' => string, 'NewTeacher' => string, 'NewSubject' => string, 'Room' => string, 'Instead' => string, 'Comment' => string)) 
  */
-function replacements_parseEntries($element) {
+function replacementsParser_parseEntries($element) {
     $res = array();
     $first = true;
     foreach ($element->getElementsByTagName('tr') as $tr) {
@@ -116,7 +116,7 @@ function replacements_parseEntries($element) {
  * @param DOMElement $element
  * @return array (string)
  */
-function replacements_parseNotices($element) {
+function replacementsParser_parseNotices($element) {
     $res = array();
     foreach ($element->childNodes as $notice) {
         if ($notice instanceof DOMText)
@@ -131,7 +131,7 @@ function replacements_parseNotices($element) {
  * @param string $text Eine Datums-/Zeitangabe in der Form "... 25.07.2011 10:23 ..."
  * @return DateTime 
  */
-function replacements_parseDateTime($text) {
+function replacementsParser_parseDateTime($text) {
     $text = preg_replace('/[\D]*([\d]*)\.([\d]*)\.([\d]*)[\s]*([\d]*):([\d]*)[\D]*/', '$3-$2-$1 $4:$5', $text);
     return new DateTime($text, new DateTimeZone("Europe/Berlin"));
 }
@@ -141,7 +141,7 @@ function replacements_parseDateTime($text) {
  * @param string $text Eine Zeitangabe in der Form "... 25.07.2011 ..."
  * @return DateTime 
  */
-function replacements_parseDate($text) {
+function replacementsParser_parseDate($text) {
     $text = preg_replace('/[\D]*([\d]*)\.([\d]*)\.([\d]*)[\D]*/', '$3-$2-$1', $text);
     return new DateTime($text, new DateTimeZone("Europe/Berlin"));
 }
