@@ -1,39 +1,53 @@
 <?php
 
+/**
+ * Die Liste mit den URLs der Vertretungspläne.
+ */
 $urls = array(
-    'Mo' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_mo.htm",
-    'Di' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_di.htm",
-    'Mi' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_mi.htm",
-    'Do' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_do.htm",
-    'Fr' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_fr.htm"
+    'Mon' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_mo.htm",
+    'Tue' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_di.htm",
+    'Wed' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_mi.htm",
+    'Thu' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_do.htm",
+    'Fri' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_fr.htm"
 );
 
-main();
+test();
 
-function main() {
+/**
+ * Zeigt bei Aufruf mit den URL-Parametern 'all' oder 'day=(Mon|Tue|Wed|Thu|Fri)' das Ergebnis der Parsers an.
+ * @global array $urls 
+ */
+function replacements_test() {
     global $urls;
 
     if (array_key_exists('day', $_GET))
-        echo '<pre>' . print_r(parseURL($urls[$_GET['day']]), true) . '</pre>';
+        echo '<pre>' . print_r(replacements_parseURL($urls[$_GET['day']]), true) . '</pre>';
     else if (array_key_exists('all', $_GET))
-        echo '<pre>' . print_r(parse(), true) . '</pre>';
+        echo '<pre>' . print_r(replacements_parse(), true) . '</pre>';
 }
 
-function parse() {
+/**
+ * Parst alle Vertretungspläne.
+ * @global array $urls
+ * @return array (array('DateChanged' => DateTime, 'Date' => DateTime, 'Notices' => array(string), 'Entries' => array(array('Course' => string, 'Lesson' => string, 'OldSubject' => string, 'NewTeacher' => string, 'NewSubject' => string, 'Room' => string, 'Instead' => string, 'Comment' => string))))
+ */
+function replacements_parse() {
     global $urls;
     $res = array();
     foreach ($urls as $key => $value) {
-        $res[$key] = parseURL($value);
+        $day = replacements_parseURL($value);
+        if ($day != null)
+            $res[$key] = $day;
     }
     return $res;
 }
 
 /**
- *
+ * Parst das Dokument mit der angegeben URL.
  * @param string $url
- * @return type 
+ * @return array ('DateChanged' => DateTime, 'Date' => DateTime, 'Notices' => array(string), 'Entries' => array(array('Course' => string, 'Lesson' => string, 'OldSubject' => string, 'NewTeacher' => string, 'NewSubject' => string, 'Room' => string, 'Instead' => string, 'Comment' => string))) 
  */
-function parseURL($url) {
+function replacements_parseURL($url) {
     if ($url == null || $url == '')
         return null;
     $header = array();
@@ -45,33 +59,44 @@ function parseURL($url) {
     $doc->loadHTML($filecontent);
     if ($doc == false)
         return null;
-    return parseDocument($doc);
+    return replacements_parseDocument($doc);
 }
 
-function parseDocument($doc) {
+/**
+ * Parst das ganze Dokument.
+ * @param DOMDocument $doc
+ * @return array ('DateChanged' => DateTime, 'Date' => DateTime, 'Notices' => array(string), 'Entries' => array(array('Course' => string, 'Lesson' => string, 'OldSubject' => string, 'NewTeacher' => string, 'NewSubject' => string, 'Room' => string, 'Instead' => string, 'Comment' => string)))
+ */
+function replacements_parseDocument($doc) {
     $res = array();
 
     $html = $doc->documentElement;
+    //include 'tree.php';
     //echo tree($html);
     $body = $html->getElementsByTagName('body')->item(0);
 
     $header = $body->getElementsByTagName('center')->item(0)->getElementsByTagName('thead')->item(0);
     $dateChanged = $header->getElementsByTagName('th')->item(2);
-    $res['DateChanged'] = parseDateTime($dateChanged->textContent);
+    $res['DateChanged'] = replacements_parseDateTime($dateChanged->textContent);
 
     $title = $body->getElementsByTagName('h2')->item(0);
-    $res['Date'] = parseDate($title->textContent);
+    $res['Date'] = replacements_parseDate($title->textContent);
 
     $notices = $body->getElementsByTagName('center')->item(1)->getElementsByTagName('table')->item(0)->getElementsByTagName('td')->item(0);
-    $res['Notices'] = parseNotices($notices);
+    $res['Notices'] = replacements_parseNotices($notices);
 
     $entries = $body->getElementsByTagName('center')->item(2)->getElementsByTagName('table')->item(0);
-    $res['Entries'] = parseEntries($entries);
+    $res['Entries'] = replacements_parseEntries($entries);
 
     return $res;
 }
 
-function parseEntries($element) {
+/**
+ * Parst die Tabelle mit den Vertretungen.
+ * @param DOMElement $element
+ * @return array (array('Course' => string, 'Lesson' => string, 'OldSubject' => string, 'NewTeacher' => string, 'NewSubject' => string, 'Room' => string, 'Instead' => string, 'Comment' => string)) 
+ */
+function replacements_parseEntries($element) {
     $res = array();
     $first = true;
     foreach ($element->getElementsByTagName('tr') as $tr) {
@@ -87,11 +112,11 @@ function parseEntries($element) {
 }
 
 /**
- *
+ * Parst die Tabelle mit den Mitteilungen.
  * @param DOMElement $element
- * @return array(string*)
+ * @return array (string)
  */
-function parseNotices($element) {
+function replacements_parseNotices($element) {
     $res = array();
     foreach ($element->childNodes as $notice) {
         if ($notice instanceof DOMText)
@@ -102,52 +127,23 @@ function parseNotices($element) {
 }
 
 /**
- * @param string $text Eine Zeitangabe in der Form "... 25.07.2011 10:23 ..."
+ * Parst eine Datums-/Zeitangabe aus einem ziffernfreien Text.
+ * @param string $text Eine Datums-/Zeitangabe in der Form "... 25.07.2011 10:23 ..."
  * @return DateTime 
  */
-function parseDateTime($text) {
+function replacements_parseDateTime($text) {
     $text = preg_replace('/[\D]*([\d]*)\.([\d]*)\.([\d]*)[\s]*([\d]*):([\d]*)[\D]*/', '$3-$2-$1 $4:$5', $text);
     return new DateTime($text, new DateTimeZone("Europe/Berlin"));
 }
 
 /**
+ * Parst eine Datumsangabe aus einem ziffernfreien Text.
  * @param string $text Eine Zeitangabe in der Form "... 25.07.2011 ..."
  * @return DateTime 
  */
-function parseDate($text) {
+function replacements_parseDate($text) {
     $text = preg_replace('/[\D]*([\d]*)\.([\d]*)\.([\d]*)[\D]*/', '$3-$2-$1', $text);
     return new DateTime($text, new DateTimeZone("Europe/Berlin"));
-}
-
-/**
- * Nur zum Testen.
- * Quelle: http://abeautifulsite.net/blog/2007/06/php-file-tree/
- * @param DOMElement $element
- * @return string 
- */
-function tree($element) {
-    $res = "";
-    $nodeList = $element->childNodes;
-    $attribList = $element->attributes;
-
-    if (count($nodeList) + count($attribList) > 0) {
-        $res .= "<ul>";
-        foreach ($attribList as $attrib) {
-            $res .= "<li> <div style=\"font-style: italic;\">" . htmlspecialchars($attrib->name . ': ' . $attrib->value) . "</div></li>";
-        }
-        foreach ($nodeList as $node) {
-            if ($node instanceof DOMText) {
-                if (!preg_match('/^[\s]*$/', $node->wholeText))
-                    $res .= "<li> <div style=\"color: navy;\">" . htmlspecialchars($node->wholeText) . "</div>";
-            } else {
-                $res .= "<li> <div style=\"font-weight: bold;\">" . htmlspecialchars($node->nodeName) . "</div>";
-                $res .= tree($node);
-                $res .= "</li>";
-            }
-        }
-        $res .= "</ul>";
-    }
-    return $res;
 }
 
 ?>
