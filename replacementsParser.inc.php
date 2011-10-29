@@ -11,21 +11,6 @@ $urls = array(
     'Fri' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_fr.htm"
 );
 
-//replacementsParser_test();
-
-/**
- * Zeigt bei Aufruf mit den URL-Parametern 'all' oder 'day=(Mon|Tue|Wed|Thu|Fri)' das Ergebnis der Parsers an.
- * @global array $urls 
- */
-function replacementsParser_test() {
-    global $urls;
-
-    if (array_key_exists('day', $_GET))
-        echo '<pre>' . print_r(replacementsParser_parseURL($urls[$_GET['day']]), true) . '</pre>';
-    else if (array_key_exists('all', $_GET))
-        echo '<pre>' . print_r(replacementsParser_parse(), true) . '</pre>';
-}
-
 /**
  * Parst alle Vertretungspläne.
  * @global array $urls
