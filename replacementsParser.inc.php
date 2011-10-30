@@ -90,7 +90,7 @@ function replacementsParser_parseEntries($element) {
             continue;
         }
         $tds = $tr->getElementsByTagName('td');
-        $entry = array('Course' => $tds->item(0)->textContent, 'Lesson' => $tds->item(1)->textContent, 'OldSubject' => $tds->item(2)->textContent, 'NewTeacher' => $tds->item(3)->textContent, 'NewSubject' => $tds->item(4)->textContent, 'Room' => $tds->item(5)->textContent, 'Instead' => $tds->item(6)->textContent, 'Comment' => $tds->item(7)->textContent);
+        $entry = array('Course' => utf8_encode($tds->item(0)->textContent), 'Lesson' => utf8_encode($tds->item(1)->textContent), 'OldSubject' => utf8_encode($tds->item(2)->textContent), 'NewTeacher' => utf8_encode($tds->item(3)->textContent), 'NewSubject' => utf8_encode($tds->item(4)->textContent), 'Room' => utf8_encode($tds->item(5)->textContent), 'Instead' => utf8_encode($tds->item(6)->textContent), 'Comment' => utf8_encode($tds->item(7)->textContent));
         array_push($res, $entry);
     }
     return $res;
@@ -106,7 +106,7 @@ function replacementsParser_parseNotices($element) {
     foreach ($element->childNodes as $notice) {
         if ($notice instanceof DOMText)
             if (!preg_match('/^[\s]*$/', $notice->wholeText))
-                array_push($res, $notice->wholeText);
+                array_push($res, utf8_encode($notice->wholeText));
     }
     return $res;
 }
