@@ -56,7 +56,7 @@ function replacementsParser_parseDocument($doc) {
     $res = array();
 
     $html = $doc->documentElement;
-    //include 'tree.php';
+    //include 'tree.inc.php';
     //echo tree($html);
     $body = $html->getElementsByTagName('body')->item(0);
 
