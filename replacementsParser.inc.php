@@ -90,7 +90,7 @@ function replacementsParser_parseEntries($element) {
             continue;
         }
         $tds = $tr->getElementsByTagName('td');
-        $entry = array('Course' => utf8_encode($tds->item(0)->textContent), 'Lesson' => utf8_encode($tds->item(1)->textContent), 'OldSubject' => utf8_encode($tds->item(2)->textContent), 'NewTeacher' => utf8_encode($tds->item(3)->textContent), 'NewSubject' => utf8_encode($tds->item(4)->textContent), 'Room' => utf8_encode($tds->item(5)->textContent), 'Instead' => utf8_encode($tds->item(6)->textContent), 'Comment' => utf8_encode($tds->item(7)->textContent));
+        $entry = array('Course' => replacementsParser_prepareString($tds->item(0)->textContent), 'Lesson' => replacementsParser_prepareString($tds->item(1)->textContent), 'OldSubject' => replacementsParser_prepareString($tds->item(2)->textContent), 'NewTeacher' => replacementsParser_prepareString($tds->item(3)->textContent), 'NewSubject' => replacementsParser_prepareString($tds->item(4)->textContent), 'Room' => replacementsParser_prepareString($tds->item(5)->textContent), 'Instead' => replacementsParser_prepareString($tds->item(6)->textContent), 'Comment' => replacementsParser_prepareString($tds->item(7)->textContent));
         array_push($res, $entry);
     }
     return $res;
@@ -106,7 +106,7 @@ function replacementsParser_parseNotices($element) {
     foreach ($element->childNodes as $notice) {
         if ($notice instanceof DOMText)
             if (!preg_match('/^[\s]*$/', $notice->wholeText))
-                array_push($res, utf8_encode($notice->wholeText));
+                array_push($res, replacementsParser_prepareString($notice->wholeText));
     }
     return $res;
 }
@@ -129,6 +129,16 @@ function replacementsParser_parseDateTime($text) {
 function replacementsParser_parseDate($text) {
     $text = preg_replace('/[\D]*([\d]*)\.([\d]*)\.([\d]*)[\D]*/', '$3-$2-$1', $text);
     return new DateTime($text, new DateTimeZone("Europe/Berlin"));
+}
+
+/**
+ * Wandelt einen string in das Ausgabeformat um.
+ * @param string $text
+ * @return string 
+ */
+function replacementsParser_prepareString($text) {
+    return utf8_encode($text);
+    //return htmlspecialchars_decode(htmlentities(utf8_encode($text), ENT_COMPAT, 'UTF-8'));
 }
 
 ?>

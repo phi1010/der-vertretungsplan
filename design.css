@@ -1,0 +1,11 @@
+/* Farbschema: http://colorschemedesigner.com/#2m52Pw0w0w0w0 + #333333 + #FFFFFF + #000000*/
+#header{
+    font-family:  "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    background:#333333;
+    color: #FFFFFF;
+}
+#header h1{
+    font-size: 24pt;
+    line-height: 48pt;
+    text-align: center
+}
