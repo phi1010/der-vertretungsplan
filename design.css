@@ -1,11 +1,122 @@
 /* Farbschema: http://colorschemedesigner.com/#2m52Pw0w0w0w0 + #333333 + #FFFFFF + #000000*/
-#header{
-    font-family:  "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
-    background:#333333;
-    color: #FFFFFF;
+
+/* === ALLGEMEIN === */
+body
+{
+    font-family: "SansationRegular","Cambria",serif;
+    background:#ffffff;
+    min-width:6.25in;
+    /*6.25in = 600px @ 96dpi => 800*600 Monitor minimal, auf Handys selbe Schriftgröße*/
 }
+h1
+{
+    font-family:  "TrashHand", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+}
+h2
+{
+    font-family: "SansationBold","Cambria",serif;
+}
+p
+{
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+/* === HEADER === */
+#header{
+    font-family:  "TrashHand", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    height: 1in;
+}
+
 #header h1{
     font-size: 24pt;
     line-height: 48pt;
-    text-align: center
+    text-align: center;
+    margin:0;
+    background: #333333;
+    background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 47%, #2c2c2c 59%, #2b2b2b 76%, #333333 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(12%,#595959), color-stop(25%,#666666), color-stop(47%,#474747), color-stop(59%,#2c2c2c), color-stop(76%,#2b2b2b), color-stop(100%,#333333));
+    background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 47%,#2c2c2c 59%,#2b2b2b 76%,#333333 100%);
+    background: -o-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 47%,#2c2c2c 59%,#2b2b2b 76%,#333333 100%);
+    background: -ms-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 47%,#2c2c2c 59%,#2b2b2b 76%,#333333 100%);
+    background: linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 47%,#2c2c2c 59%,#2b2b2b 76%,#333333 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#333333',GradientType=0 );
+    /*http://www.colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+47,2c2c2c+59,2b2b2b+76,333333+100;Custom*/
+    color: #FFFFFF;
+}
+
+#logo
+{
+    height: 92px;
+    float: right;
+}
+/* === MENU === */
+.menu{
+    font-size: 18pt;
+}
+.menu li a{
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    -moz-transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    -o-transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    -webkit-transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    /*border-right: 1px groove #9FEE00;*/
+    background-color: #333333;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    color:#FFFFFF;
+    text-align:center;
+    text-decoration:none;
+}
+.menu li a:hover, .menu ul li:hover a{
+    background-color: #9FEE00;
+    color:#000000;
+    text-decoration:none;
+}
+.menu li:hover li a{
+    background:none;
+    color:#FFFFFF;
+}
+/* === FOOTER === */
+#footer{
+    text-align: center;
+}
+/* === VERTRETUNGSPLAN === */
+.replacements{
+    text-align: center;
+}
+.replacements ul{
+    list-style: none;
+    background: #eeeeee;
+    padding: 0;
+}
+.replacements li{
+    border-color: #dddddd;
+    border-width:  1pt;
+    border-style: solid;
+    border-spacing: 0pt;
+}
+.replacements table{
+    list-style: none;
+    background: #eeeeee;
+    width:100%;
+    border-collapse: collapse;
+}
+.replacements th, .replacements td{
+    padding: 0 10pt;
+    border-color: #dddddd;
+    border-width:  1pt;
+    border-style: solid;
+    border-spacing: 0pt;
+    margin: 0pt;
+    line-height: 18pt;
+    font-size: 12pt;
+    vertical-align: top;
+}
+.replacements th.description, .replacements td.description{
+    width:100%;
+    text-align: justify;
+}
+/* === MELDUNGEN === */
+.events{
+
 }

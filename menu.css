@@ -1,17 +1,13 @@
 .menu{
-    border:none;
-    border:0px;
-    margin:0px;
     padding:0px;
-    font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
-    font-size:14px;
     font-weight:bold;
+    margin: 0;
 }
 .menu ul{
     background:#333333;
-    height:35px;
+    height:24pt;
     list-style:none;
-    margin:0;
+    margin: 0;
     padding:0;
 }
 .menu li{
@@ -19,25 +15,31 @@
     padding:0px;
 }
 .menu li a{
-    background:#333333 url("images/sep_h.gif") bottom right no-repeat;
-    color:#FFFFFF;
     display:block;
     font-weight:normal;
-    line-height:35px;
+    line-height:24pt;
     margin:0px;
     padding:0px 25px;
-    text-align:center;
-    text-decoration:none;
+}
+.menu li.seperator{
+    background: url("images/sep_h.gif");
+    width: 1px;
+    height: 35px;
 }
 .menu li a:hover, .menu ul li:hover a{
-    background: #9FEE00 url("images/hover_h.png") bottom center no-repeat;
-    color:#000000;
-    text-decoration:none;
+    background-image: url("images/hover_h.png");
+    background-position:  bottom center;
+    background-repeat:  no-repeat;
 }
 .menu li ul{
+    transition: height 0.5s ease-in-out;
+    -moz-transition: height 0.5s ease-in-out;
+    -o-transition: height 0.5s ease-in-out;
+    -webkit-transition: height 0.5s ease-in-out;
     background:#333333;
-    display:none;
-    height:auto;
+    display:block;
+    height:0px;
+    overflow:hidden;
     padding:0px;
     margin:0px;
     border:0px;
@@ -49,32 +51,32 @@
 }
 .menu li:hover ul{
     display:block;
-
+    height:auto;
 }
 .menu li li {
-    background:url('images/sep_v.gif') bottom left no-repeat;
+    /*background:url('images/sep_v.gif') bottom left no-repeat;*/
     display:block;
     float:none;
     margin:0px;
     padding:0px;
     width:225px;
 }
-.menu li:hover li a{
-    background:none;
-    color:#FFFFFF;
+.menu li li.seperator{
+    background: url("images/sep_v.gif") bottom left no-repeat;
+    width: 100px;
+    height: 1px;
 }
 .menu li ul a{
     display:block;
-    height:35px;
-    font-size:12px;
+    line-height:18pt;
+    font-size:18pt;
     font-style:normal;
     margin:0px;
-    padding:0px 10px 0px 15px;
+    padding:5pt 10pt 5pt 15pt;
     text-align:left;
 }
 .menu li ul a:hover, .menu li ul li:hover a{
     background:#9FEE00 url('images/hover_v.png') center left no-repeat;
-    border:0px;
     color:#000000;
     text-decoration:none;
 }

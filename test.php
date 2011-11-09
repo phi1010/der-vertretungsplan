@@ -5,6 +5,13 @@
         <meta http-equiv="content-type" content="charset=utf-8" />
     </head>
     <body>
+        Mögliche Aufrufe:
+        <ul>
+            <li>?replacementsParser[day=(Mon|Tue|Wed|Thu|Fri)]</li>
+            <li>?replacementsSorter</li>
+            <li>?htmlentities</li>
+            <li>?redirect=&lt;URL&gt;</li>
+        </ul>
         <?php
         include('replacementsParser.inc.php');
         include('replacementsSorter.inc.php');
