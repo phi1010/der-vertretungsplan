@@ -3,18 +3,18 @@
 /* === ALLGEMEIN === */
 body
 {
-    font-family: "SansationRegular","Cambria",serif;
+    font-family: "Sansation","Cambria",serif;
     background:#ffffff;
     min-width:6.25in;
     /*6.25in = 600px @ 96dpi => 800*600 Monitor minimal, auf Handys selbe Schriftgröße*/
 }
 h1
 {
-    font-family:  "TrashHand", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-family:  "BelligerentMadness", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
 }
 h2
 {
-    font-family: "SansationBold","Cambria",serif;
+    font-family: "Sansation","Cambria",serif;
 }
 p
 {
@@ -94,6 +94,7 @@ p
     border-width:  1pt;
     border-style: solid;
     border-spacing: 0pt;
+    margin: 0;
 }
 .replacements table{
     list-style: none;
@@ -119,4 +120,16 @@ p
 /* === MELDUNGEN === */
 .events{
 
+}
+.events ul{
+    list-style: none;
+    background: #eeeeee;
+    padding: 0;
+}
+.events li{
+    border-color: #dddddd;
+    border-width:  1pt;
+    border-style: solid;
+    border-spacing: 0pt;
+    margin: 0;
 }
