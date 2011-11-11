@@ -1,55 +1,103 @@
 <?php header('content-type: text/html; charset=utf-8'); ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta http-equiv="content-type" content="charset=utf-8" />
+        <title>Der Vertretungsplan</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="description" content="Der Vertretungsplan des Albert-Schweitzer-Gynmnasiums Erlangen" />
+        <meta name="keywords" content="Vertretungsplan ASG Albert Schweitzer Gymnasium Erlangen Schule Ausfall Lehrer Schüler Information" />
+        <meta name="robots" content="index, follow" />
+        <link rel="shortcut icon" href="---" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="fonts.css" />
+        <link rel="stylesheet" type="text/css" href="layout.css" />
+        <link rel="stylesheet" type="text/css" href="menu.css" />
+        <link rel="stylesheet" type="text/css" href="design.css" />
     </head>
     <body>
-        Mögliche Aufrufe:
-        <ul>
-            <li>?replacementsParser[day=(Mon|Tue|Wed|Thu|Fri)]</li>
-            <li>?replacementsSorter</li>
-            <li>?htmlentities</li>
-            <li>?redirect=&lt;URL&gt;</li>
-        </ul>
-        <?php
-        include('replacementsParser.inc.php');
-        include('replacementsSorter.inc.php');
+        <div id="header">
+            <img src="Calendar-256.png" id="logo" />
+            <h1>
+                Der Vertretungsplan</h1>
+            <div class="menu">
+                <ul>
+                    <li><a href="#" onclick="window.location.reload();return false;">Aktualisieren</a></li>
+                    <li class="seperator" />
+                    <li><a href="#" id="current">Mitwirken</a>
+                        <ul>
+                            <li><a href="http://webchat.esper.net/?channels=#vertretungsplan">Webchat @ esper.net</a></li>
+                            <li class="seperator" />
+                            <!--<li><a href="#">IRC @esper.net</a></li>-->
+                            <li><a href="https://github.com/phi1010/der-vertretungsplan">Quell&shy;code&shy;hosting
+                                    @ Git&shy;Hub</a></li>
+                            <li class="seperator" />
+                            <li><a href="http://der-vertretungsplan.ietherpad.com/1">Etherpad @ iEtherpad</a></li>
+                        </ul>
+                    </li>
+                    <li class="seperator" />
+                    <li><a href="/faq.php">Links</a>
+                        <ul>
+                            <li><a href="http://asg-er.dyndns.org/vertretung/">ASG Vertretungs&shy;plan</a></li>
+                            <li class="seperator" />
+                            <li><a href="http://asg-er.de/">ASG Homepage</a></li>
+                        </ul>
+                    </li>
+                    <li class="seperator" />
+                    <li><a href="http://webchat.esper.net/?channels=#vertretungsplan">Kontakt</a></li>
+                    <li class="seperator" />
+                </ul>
+            </div>
+        </div>
+        <div class="colmask rightmenu content">
+            <div class="colleft">
+                <div class="col1 replacements">
+                    <h1>Vertretungen:</h1>
+                    <?php
+                    include('replacementsParser.inc.php');
+                    include('replacementsSorter.inc.php');
+                    include('replacementsFormatter.inc.php');
 
-        test();
-
-        /**
-         * Testfunktion. Mögliche Aufrufe:
-         * ?replacementsParser[day=(Mon|Tue|Wed|Thu|Fri)]
-         * ?replacementsSorter
-         * ?htmlentities
-         * ?redirect=<URL>
-         * @global type $urls 
-         */
-        function test() {
-            if (array_key_exists('replacementsParser', $_GET)) {
-                global $urls;
-                if (array_key_exists('day', $_GET))
-                    echo '<pre>' . print_r(replacementsParser_parseURL($urls[$_GET['day']]), true) . '</pre>';
-                else
-                    echo '<pre>' . print_r(replacementsParser_parse(), true) . '</pre>';
-            }
-
-            if (array_key_exists('replacementsSorter', $_GET)) {
-                echo '<pre>' . print_r(replacementsSorter_sort(replacementsParser_parse()), true) . '</pre>';
-            }
-            if (array_key_exists('htmlentities', $_GET)) {
-                $text = 'AOU <b>ÄÖÜ</b> &lt;äöü&gt; aou S ß S';
-                echo $text;
-                echo "<br/>\n";
-                echo htmlentities($text, ENT_COMPAT, 'UTF-8');
-                echo "<br/>\n";
-                echo htmlspecialchars_decode(htmlentities($text, ENT_COMPAT, 'UTF-8'));
-            }
-            if (array_key_exists('redirect', $_GET)) {
-                echo file_get_contents($_GET['redirect']);
-            }
-        }
-        ?>
+                    echo replacementsFormatter_format(replacementsSorter_sort(replacementsParser_parse()));
+                    ?>
+                </div>
+                <div class="col2 events">
+                    <h1>
+                        Termine:</h1>
+                    <ul>
+                        <li><span style="font-weight: bold;">Mi 09. November, 14:00 Uhr: </span>Pädagogische
+                            Klassenkonferenzen </li>
+                        <li><span style="font-weight: bold;">Fr 11. November:</span> Schulmilchaktion in den
+                            Klassen 5-10 </li>
+                        <li><span style="font-weight: bold;">Sa 12. November, 09:00 - 13:30 Uhr:</span> EBIT
+                            - <a href="fileadmin/uploads/homepagegruppe/Schulleitung/EBIT_2011_Flyer.pdf"><span
+                                    style="font-weight: bold;">E</span>rlanger <span style="font-weight: bold;">B</span>erufs<span
+                                    style="font-weight: bold;">I</span>nformations<span style="font-weight: bold;">T</span>ag
+                            </a>am ASG - hochinteressant für Schülerinnen und Schüler ab der 10. Jgst.!
+                        </li>
+                        <li><span style="font-weight: bold;">Di, 15. November, 19:00 Uhr:</span> Sportelternabend</li>
+                        <li><span style="font-weight: bold;">Mi, 16. November:</span> Buß- und Bettag: unterrichtsfrei</li>
+                        <li><span style="font-weight: bold;">Mo, 21. November, 18:30 Uhr:</span> Klassenelternabende
+                            der 7. Klassen</li>
+                        <li><span style="font-weight: bold;">Mo, 21. November, 19:00 Uhr:</span> Skilager-Info
+                            und Klassenelternabende der 8. Klassen</li>
+                        <li><span style="font-weight: bold;">Do, 01. Dezember, 18:30 Uhr:</span> Information
+                            zum Praktikum mit anschließenden Klassenelternabenden der 9. Klassen</li>
+                        <li><span style="font-weight: bold;">Do, 01. Dezember, 18:30 Uhr:</span> Klassenelternabende
+                            der 10. Klassen</li>
+                        <li style="color: rgb(255, 0, 0); font-weight: bold;"><span style="font-weight: normal;">
+                                <span style="font-weight: bold;">Mi, 07. Dezember, 17:30 - 20:30 Uhr:</span> Allgemeiner
+                                Elternsprechabend</span> </li>
+                        <li><span style="font-weight: bold;">Mi, 14. Dezember, 19:00 Uhr: </span>Weihnachtskonzert
+                            in der Johanneskirche; <span style="color: rgb(204, 51, 0);">ab <span style="font-weight: bold;">
+                                    18:00 Uhr</span> Weihnachtsmarkt vor der Kirche</span></li>
+                        <li><span style="font-weight: bold;">Fr, 23. Dezember, 11:15 Uhr:</span> Unterrichtsschluss
+                            vor den Weihnachtsferien</li>
+                        <li style="color: rgb(0, 102, 255);"><span style="font-weight: bold;">Dienstag, 14.
+                                Februar 2012, 19:00 Uhr:</span> Informationsabend für die zukünftige 5. Jahrgangsstufe</li></ul>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <p> Alle Angaben ohne Gewähr. Beim Besuch dieser Website werden IP-Adresse, Bildschirmgröße, Browserversion und ähnliche Informationen erfasst, um eine öffentliche Statistik zu erstellen.</p>
+        </div>
     </body>
 </html>

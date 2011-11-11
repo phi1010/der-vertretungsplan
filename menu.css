@@ -18,13 +18,14 @@
     display:block;
     font-weight:normal;
     line-height:24pt;
-    margin:0px;
-    padding:0px 25px;
+    margin:0pt;
+    padding:0pt 20pt;
 }
 .menu li.seperator{
     background: url("images/sep_h.gif");
+    background-position:  bottom center;
     width: 1px;
-    height: 35px;
+    height: 24pt;
 }
 .menu li a:hover, .menu ul li:hover a{
     background-image: url("images/hover_h.png");
@@ -44,7 +45,7 @@
     margin:0px;
     border:0px;
     position:absolute;
-    width:225px;
+    width:200pt;
     z-index:200;
     /*top:1em;
     /*left:0;*/
@@ -59,11 +60,11 @@
     float:none;
     margin:0px;
     padding:0px;
-    width:225px;
+    width:200pt;
 }
 .menu li li.seperator{
     background: url("images/sep_v.gif") bottom left no-repeat;
-    width: 100px;
+    width: 100pt;
     height: 1px;
 }
 .menu li ul a{

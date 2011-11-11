@@ -14,7 +14,7 @@ $urls = array(
 /**
  * Parst alle Vertretungspläne.
  * @global array $urls
- * @return array (array('DateChanged' => DateTime, 'Date' => DateTime, 'Notices' => array(string), 'Entries' => array(array('Course' => string, 'Lesson' => string, 'OldSubject' => string, 'NewTeacher' => string, 'NewSubject' => string, 'Room' => string, 'Instead' => string, 'Comment' => string))))
+ * @return array 
  */
 function replacementsParser_parse() {
     global $urls;
@@ -30,30 +30,22 @@ function replacementsParser_parse() {
 /**
  * Parst das Dokument mit der angegeben URL.
  * @param string $url
- * @return array ('DateChanged' => DateTime, 'Date' => DateTime, 'Notices' => array(string), 'Entries' => array(array('Course' => string, 'Lesson' => string, 'OldSubject' => string, 'NewTeacher' => string, 'NewSubject' => string, 'Room' => string, 'Instead' => string, 'Comment' => string))) 
+ * @return array ('URL' => string, 'DateChanged' => int, 'Date' => int, 'Notices' => array(string), 'Entries' => array(array('Course' => string, 'Lesson' => string, 'OldSubject' => string, 'NewTeacher' => string, 'NewSubject' => string, 'Room' => string, 'Instead' => string, 'Description' => string))) 
  */
 function replacementsParser_parseURL($url) {
     if ($url == null || $url == '')
         return null;
     $header = array();
-    $filecontent = file_get_contents($url);
-    if ($filecontent == null || $filecontent == '')
+    $filecontent = @file_get_contents($url);
+    if ($filecontent == false || $filecontent == null || $filecontent == '')
         return null;
     $filecontent = preg_replace(array('#<meta([^>]*)>#i', '#<br\s*>#i'), array('', '<br/>'), $filecontent);
     $doc = new DOMDocument();
     $doc->loadHTML($filecontent);
     if ($doc == false)
         return null;
-    return replacementsParser_parseDocument($doc);
-}
 
-/**
- * Parst das ganze Dokument.
- * @param DOMDocument $doc
- * @return array ('DateChanged' => DateTime, 'Date' => DateTime, 'Notices' => array(string), 'Entries' => array(array('Course' => string, 'Lesson' => string, 'OldSubject' => string, 'NewTeacher' => string, 'NewSubject' => string, 'Room' => string, 'Instead' => string, 'Comment' => string)))
- */
-function replacementsParser_parseDocument($doc) {
-    $res = array();
+    $res['URL'] = $url;
 
     $html = $doc->documentElement;
     //include 'tree.inc.php';
@@ -79,7 +71,7 @@ function replacementsParser_parseDocument($doc) {
 /**
  * Parst die Tabelle mit den Vertretungen.
  * @param DOMElement $element
- * @return array (array('Course' => string, 'Lesson' => string, 'OldSubject' => string, 'NewTeacher' => string, 'NewSubject' => string, 'Room' => string, 'Instead' => string, 'Comment' => string)) 
+ * @return array
  */
 function replacementsParser_parseEntries($element) {
     $res = array();
@@ -90,7 +82,7 @@ function replacementsParser_parseEntries($element) {
             continue;
         }
         $tds = $tr->getElementsByTagName('td');
-        $entry = array('Course' => replacementsParser_prepareString($tds->item(0)->textContent), 'Lesson' => replacementsParser_prepareString($tds->item(1)->textContent), 'OldSubject' => replacementsParser_prepareString($tds->item(2)->textContent), 'NewTeacher' => replacementsParser_prepareString($tds->item(3)->textContent), 'NewSubject' => replacementsParser_prepareString($tds->item(4)->textContent), 'Room' => replacementsParser_prepareString($tds->item(5)->textContent), 'Instead' => replacementsParser_prepareString($tds->item(6)->textContent), 'Comment' => replacementsParser_prepareString($tds->item(7)->textContent));
+        $entry = array('Course' => replacementsParser_prepareString($tds->item(0)->textContent), 'Lesson' => replacementsParser_prepareString($tds->item(1)->textContent), 'OldSubject' => replacementsParser_prepareString($tds->item(2)->textContent), 'NewTeacher' => replacementsParser_prepareString($tds->item(3)->textContent), 'NewSubject' => replacementsParser_prepareString($tds->item(4)->textContent), 'Room' => replacementsParser_prepareString($tds->item(5)->textContent), 'Instead' => replacementsParser_prepareString($tds->item(6)->textContent), 'Description' => replacementsParser_prepareString($tds->item(7)->textContent));
         array_push($res, $entry);
     }
     return $res;
@@ -99,7 +91,7 @@ function replacementsParser_parseEntries($element) {
 /**
  * Parst die Tabelle mit den Mitteilungen.
  * @param DOMElement $element
- * @return array (string)
+ * @return array 
  */
 function replacementsParser_parseNotices($element) {
     $res = array();
@@ -118,7 +110,7 @@ function replacementsParser_parseNotices($element) {
  */
 function replacementsParser_parseDateTime($text) {
     $text = preg_replace('/[\D]*([\d]*)\.([\d]*)\.([\d]*)[\s]*([\d]*):([\d]*)[\D]*/', '$3-$2-$1 $4:$5', $text);
-    return new DateTime($text, new DateTimeZone("Europe/Berlin"));
+    return strtotime($text);
 }
 
 /**
@@ -128,7 +120,7 @@ function replacementsParser_parseDateTime($text) {
  */
 function replacementsParser_parseDate($text) {
     $text = preg_replace('/[\D]*([\d]*)\.([\d]*)\.([\d]*)[\D]*/', '$3-$2-$1', $text);
-    return new DateTime($text, new DateTimeZone("Europe/Berlin"));
+    return strtotime($text);
 }
 
 /**
@@ -137,8 +129,8 @@ function replacementsParser_parseDate($text) {
  * @return string 
  */
 function replacementsParser_prepareString($text) {
-    return utf8_encode($text);
-    //return htmlspecialchars_decode(htmlentities(utf8_encode($text), ENT_COMPAT, 'UTF-8'));
+    return /*utf8_encode*/($text);
+    //return htmlspecialchars_decode(htmlentities($text, ENT_COMPAT, 'UTF-8'));
 }
 
 ?>

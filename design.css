@@ -3,18 +3,14 @@
 /* === ALLGEMEIN === */
 body
 {
-    font-family: "Sansation","Cambria",serif;
+    font-family: "Cambria","Cambria",serif;
     background:#ffffff;
     min-width:6.25in;
     /*6.25in = 600px @ 96dpi => 800*600 Monitor minimal, auf Handys selbe Schriftgröße*/
 }
 h1
 {
-    font-family:  "BelligerentMadness", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
-}
-h2
-{
-    font-family: "Sansation","Cambria",serif;
+    font-family:  "TrashHand", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
 }
 p
 {
@@ -29,20 +25,13 @@ p
 }
 
 #header h1{
-    font-size: 24pt;
+    font-size: 32pt;
     line-height: 48pt;
     text-align: center;
     margin:0;
-    background: #333333;
-    background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 47%, #2c2c2c 59%, #2b2b2b 76%, #333333 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(12%,#595959), color-stop(25%,#666666), color-stop(47%,#474747), color-stop(59%,#2c2c2c), color-stop(76%,#2b2b2b), color-stop(100%,#333333));
-    background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 47%,#2c2c2c 59%,#2b2b2b 76%,#333333 100%);
-    background: -o-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 47%,#2c2c2c 59%,#2b2b2b 76%,#333333 100%);
-    background: -ms-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 47%,#2c2c2c 59%,#2b2b2b 76%,#333333 100%);
-    background: linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 47%,#2c2c2c 59%,#2b2b2b 76%,#333333 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#333333',GradientType=0 );
-    /*http://www.colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+47,2c2c2c+59,2b2b2b+76,333333+100;Custom*/
-    color: #FFFFFF;
+    background: #FFFFFF;
+    color: #000000;
+    text-shadow: 2pt 2pt 5pt #888888;
 }
 
 #logo
@@ -79,10 +68,22 @@ p
 /* === FOOTER === */
 #footer{
     text-align: center;
+    background-color: #333333;
+    color:#FFFFFF;
+    padding:10pt;
+}
+/* === CONTENT === */
+.content{
 }
 /* === VERTRETUNGSPLAN === */
-.replacements{
+.replacements {
     text-align: center;
+}
+.replacements h2{
+    font-family: "Cambria","Times",serif;
+}
+.replacements h2~h2 { 
+    margin-top: 1in;
 }
 .replacements ul{
     list-style: none;
@@ -102,20 +103,42 @@ p
     width:100%;
     border-collapse: collapse;
 }
-.replacements th, .replacements td{
+.replacements th{
+    border-top-color: #888888;
+    border-top-width:  1pt;
+    border-top-style: solid;
+    border-top-spacing: 0pt;
+    border-bottom-color: #888888;
+    border-bottom-width:  2pt;
+    border-bottom-style: groove;
+    border-bottom-spacing: 0pt;
+    color: #002475;
+}
+.replacements td{
     padding: 0 10pt;
-    border-color: #dddddd;
-    border-width:  1pt;
-    border-style: solid;
-    border-spacing: 0pt;
+    border-bottom-color: #FFFFFF;
+    border-bottom-width:  1pt;
+    border-bottom-style: solid;
+    border-bottom-spacing: 0pt;
     margin: 0pt;
     line-height: 18pt;
     font-size: 12pt;
     vertical-align: top;
 }
-.replacements th.description, .replacements td.description{
+.replacements th, .replacements td{
+    padding: 0 10pt;
+    margin: 0pt;
+    line-height: 18pt;
+    font-size: 12pt;
+    vertical-align: top;
+}
+.replacements .description{
     width:100%;
     text-align: justify;
+}
+.replacements .even
+{
+    background-color: #B4CBFF;
 }
 /* === MELDUNGEN === */
 .events{

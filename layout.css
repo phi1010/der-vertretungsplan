@@ -104,10 +104,12 @@ body {
 /* 2 Column (right menu) settings */
 .rightmenu {
     background:#eee;		/* right column background colour */
+    box-shadow: 10pt 10pt 5pt #888888 inset;
 }
 .rightmenu .colleft {
     right:25%;			/* right column width */
     background:#fff;		/* left column background colour */
+    box-shadow: 10pt 10pt 5pt #888888 inset;
 }
 .rightmenu .col1 {
     width:71%;			/* left column content width (left column width minus left and right padding) */
@@ -145,5 +147,5 @@ body {
 #footer {
     clear:both;
     float:left;
-    width:100%;
+    width:auto;
 }
