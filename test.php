@@ -62,6 +62,7 @@
                 <div class="col2 events">
                     <h1>
                         Termine:</h1>
+                    <p>Bitte beachten sie, dass die Termine noch nicht automatisch aktualisiert werden.</p>
                     <ul>
                         <li><span style="font-weight: bold;">Mi 09. November, 14:00 Uhr: </span>Pädagogische
                             Klassenkonferenzen </li>
@@ -97,7 +98,18 @@
             </div>
         </div>
         <div id="footer">
-            <p> Alle Angaben ohne Gewähr. Beim Besuch dieser Website werden IP-Adresse, Bildschirmgröße, Browserversion und ähnliche Informationen erfasst, um eine öffentliche Statistik zu erstellen.</p>
+            <div id="footerbox">
+                Alle Angaben ohne Gewähr.
+                <br/>
+                Beim Besuch dieser Website werden IP-Adresse, Bildschirmgröße, Browserversion und ähnliche Informationen erfasst, um eine öffentliche Statistik zu erstellen.
+                <br/>
+                <script type="text/javascript" src="http://logging.ourstats.de/js.php?ID=719764&amp;style=blue"></script><a target="_blank" href="http://stats.ourstats.de/?ID=719764"><img border="0" alt="ourSTATS.de - kostenloser Statistik Counter" src="http://logging.ourstats.de/logging.php?ID=719764&amp;style=blue&amp;js=1&amp;cookie=y&amp;lang=de&amp;ref=http%253A%2F%2Fwww.yousa.de%2F14plus1%2Fasg%2F&amp;screen=1280x1024&amp;ac=1321136746736"></a>
+                <noscript>
+                    &lt;a href="http://stats.ourstats.de/?ID=719764" target="_blank"&gt;
+                    &lt;img src="http://logging.ourstats.de/logging.php?ID=719764&amp;js=0&amp;style=blue" border="0" /&gt;
+                    &lt;/a&gt;
+                </noscript>
+            </div>
         </div>
     </body>
 </html>

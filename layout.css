@@ -148,4 +148,10 @@ body {
     clear:both;
     float:left;
     width:100%;
+    overflow: hidden;
+}
+#footerbox{
+    position: relative;
+    left: 2%;
+    width: 96%;
 }
