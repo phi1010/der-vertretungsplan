@@ -4,11 +4,11 @@
 
 @font-face {
     font-family: 'BelligerentMadnessRegular';
-    src: url('belligerent-webfont.eot');
-    src: url('belligerent-webfont.eot?#iefix') format('embedded-opentype'),
-         url('belligerent-webfont.woff') format('woff'),
-         url('belligerent-webfont.ttf') format('truetype'),
-         url('belligerent-webfont.svg#BelligerentMadnessRegular') format('svg');
+    src: url('BelligerentMadness.eot');
+    src: url('BelligerentMadness.eot?#iefix') format('embedded-opentype'),
+         url('BelligerentMadness.woff') format('woff'),
+         url('BelligerentMadness.ttf') format('truetype'),
+         url('BelligerentMadness.svg#BelligerentMadnessRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 

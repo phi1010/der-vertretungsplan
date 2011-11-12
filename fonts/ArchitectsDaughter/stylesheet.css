@@ -4,11 +4,11 @@
 
 @font-face {
     font-family: 'ArchitectsDaughterRegular';
-    src: url('ArchitectsDaughter-webfont.eot');
-    src: url('ArchitectsDaughter-webfont.eot?#iefix') format('embedded-opentype'),
-         url('ArchitectsDaughter-webfont.woff') format('woff'),
-         url('ArchitectsDaughter-webfont.ttf') format('truetype'),
-         url('ArchitectsDaughter-webfont.svg#ArchitectsDaughterRegular') format('svg');
+    src: url('ArchitectsDaughter.eot');
+    src: url('ArchitectsDaughter.eot?#iefix') format('embedded-opentype'),
+         url('ArchitectsDaughter.woff') format('woff'),
+         url('ArchitectsDaughter.ttf') format('truetype'),
+         url('ArchitectsDaughter.svg#ArchitectsDaughterRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
