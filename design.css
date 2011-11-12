@@ -5,12 +5,13 @@ body
 {
     font-family: "Cambria","Cambria",serif;
     background:#ffffff;
+    color:#333333;
     min-width:6.25in;
     /*6.25in = 600px @ 96dpi => 800*600 Monitor minimal, auf Handys selbe Schriftgröße*/
 }
 h1
 {
-    font-family:  "TrashHand", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-family:  "DroidSerifRegular", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
 }
 p
 {
@@ -20,17 +21,17 @@ p
 
 /* === HEADER === */
 #header{
-    font-family:  "TrashHand", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
-    height: 1in;
+    font-family:  "DroidSerifRegular", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    height: 1.1in;
 }
 
 #header h1{
-    font-size: 32pt;
-    line-height: 48pt;
+    font-size: 26pt;
+    line-height: 46pt;
     text-align: center;
     margin:0;
     background: #FFFFFF;
-    color: #000000;
+    color: #333333;
     text-shadow: 2pt 2pt 5pt #888888;
 }
 
@@ -41,13 +42,16 @@ p
 }
 /* === MENU === */
 .menu{
-    font-size: 18pt;
+    font-size: 14pt;
+}
+.menu li ul a{
+    font-size:12pt;
 }
 .menu li a{
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-    -moz-transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-    -o-transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
-    -webkit-transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+    -moz-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+    -o-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+    -webkit-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
     /*border-right: 1px groove #9FEE00;*/
     background-color: #333333;
     background-position: bottom right;
@@ -57,8 +61,8 @@ p
     text-decoration:none;
 }
 .menu li a:hover, .menu ul li:hover a{
-    background-color: #9FEE00;
-    color:#000000;
+    background-color: #222222;
+    color:#ffffff;
     text-decoration:none;
 }
 .menu li:hover li a{

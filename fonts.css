@@ -69,3 +69,31 @@
     font-style: normal;
 
 }
+
+
+
+/* Neu hinzugefügte Schriftarten */
+
+@font-face {
+    font-family: 'DroidSerifRegular';
+    src: url('fonts/DroidSerif/DroidSerif-Regular-webfont.eot');
+    src: url('fonts/DroidSerif/DroidSerif-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/DroidSerif/DroidSerif-Regular-webfont.woff') format('woff'),
+         url('fonts/DroidSerif/DroidSerif-Regular-webfont.ttf') format('truetype'),
+         url('fonts/DroidSerif/DroidSerif-Regular-webfont.svg#DroidSerifRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'DroidSerifBold';
+    src: url('fonts/DroidSerif/DroidSerif-Bold-webfont.eot');
+    src: url('fonts/DroidSerif/DroidSerif-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/DroidSerif/DroidSerif-Bold-webfont.woff') format('woff'),
+         url('fonts/DroidSerif/DroidSerif-Bold-webfont.ttf') format('truetype'),
+         url('fonts/DroidSerif/DroidSerif-Bold-webfont.svg#DroidSerifBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

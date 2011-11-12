@@ -77,8 +77,8 @@
     text-align:left;
 }
 .menu li ul a:hover, .menu li ul li:hover a{
-    background:#9FEE00 url('images/hover_v.png') center left no-repeat;
-    color:#000000;
+    background:#222222 url('images/hover_v.png') center left no-repeat;
+    color:#ffffff;
     text-decoration:none;
 }
 .menu p{
