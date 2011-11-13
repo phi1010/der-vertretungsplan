@@ -24,25 +24,25 @@
                     <li class="seperator" />
                     <li><a href="#" id="current">Mitwirken</a>
                         <ul>
-                            <li><a href="http://webchat.esper.net/?channels=#vertretungsplan">Webchat @ esper.net</a></li>
+                            <li><a href="http://webchat.esper.net/?channels=#vertretungsplan" target="_blank">Webchat @ esper.net</a></li>
                             <li class="seperator" />
                             <!--<li><a href="#">IRC @esper.net</a></li>-->
-                            <li><a href="https://github.com/phi1010/der-vertretungsplan">Quell&shy;code&shy;hosting
+                            <li><a href="https://github.com/phi1010/der-vertretungsplan" target="_blank">Quell&shy;code&shy;hosting
                                     @ Git&shy;Hub</a></li>
                             <li class="seperator" />
-                            <li><a href="http://der-vertretungsplan.ietherpad.com/1">Etherpad @ iEtherpad</a></li>
+                            <li><a href="http://der-vertretungsplan.ietherpad.com/1" target="_blank">Etherpad @ iEtherpad</a></li>
                         </ul>
                     </li>
                     <li class="seperator" />
                     <li><a href="/faq.php">Links</a>
                         <ul>
-                            <li><a href="http://asg-er.dyndns.org/vertretung/">ASG Vertretungs&shy;plan</a></li>
+                            <li><a href="http://asg-er.dyndns.org/vertretung/" target="_blank">ASG Vertretungs&shy;plan</a></li>
                             <li class="seperator" />
-                            <li><a href="http://asg-er.de/">ASG Homepage</a></li>
+                            <li><a href="http://asg-er.de/" target="_blank">ASG Homepage</a></li>
                         </ul>
                     </li>
                     <li class="seperator" />
-                    <li><a href="http://webchat.esper.net/?channels=#vertretungsplan">Kontakt</a></li>
+                    <li><a href="http://webchat.esper.net/?channels=#vertretungsplan" target="_blank">Kontakt</a></li>
                     <li class="seperator" />
                 </ul>
             </div>
@@ -53,10 +53,11 @@
                     <h1>Vertretungen:</h1>
                     <?php
                     include('replacementsParser.inc.php');
+                    include('replacementsFilter.inc.php');
                     include('replacementsSorter.inc.php');
                     include('replacementsFormatter.inc.php');
 
-                    echo replacementsFormatter_format(replacementsSorter_sort(replacementsParser_parse()));
+                    echo replacementsFormatter_format(replacementsSorter_sort(replacementsFilter_filter(replacementsParser_parse())));
                     ?>
                 </div>
                 <div class="col2 events">

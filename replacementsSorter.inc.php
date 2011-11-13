@@ -8,14 +8,14 @@
  */
 function replacementsSorter_sort($data) {
 
-    function cmpDays($a, $b) {
+    function replacementsSorter_cmpDays($a, $b) {
         if ($a['Date'] == $b['Date']) {
             return 0;
         }
         return ($a['Date'] < $b['Date']) ? -1 : 1;
     }
 
-    function cmpEntries($a, $b) {
+    function replacementsSorter_cmpEntries($a, $b) {
         $res = strnatcmp($a['Course'], $b['Course']);
         if ($res == 0) {
             $res = strnatcmp($a['Lesson'], $b['Lesson']);
@@ -26,9 +26,9 @@ function replacementsSorter_sort($data) {
         return $res;
     }
 
-    uasort($data, 'cmpDays');
+    uasort($data, 'replacementsSorter_cmpDays');
     foreach ($data as $day) {
-        usort($day['Entries'], 'cmpEntries');
+        usort($day['Entries'], 'replacementsSorter_cmpEntries');
     }
     return $data; //Der Rückgabewert kann ignoriert werden, ermöglicht aber eine kompaktere Schreibweise.
 }
