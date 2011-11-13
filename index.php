@@ -104,12 +104,27 @@
                 <br/>
                 Beim Besuch dieser Website werden IP-Adresse, Bildschirmgröße, Browserversion und ähnliche Informationen erfasst, um eine öffentliche Statistik zu erstellen.
                 <br/>
-                <script type="text/javascript" src="http://logging.ourstats.de/js.php?ID=719764&amp;style=blue"></script><a target="_blank" href="http://stats.ourstats.de/?ID=719764"><img border="0" alt="ourSTATS.de - kostenloser Statistik Counter" src="http://logging.ourstats.de/logging.php?ID=719764&amp;style=blue&amp;js=1&amp;cookie=y&amp;lang=de&amp;ref=http%253A%2F%2Fwww.yousa.de%2F14plus1%2Fasg%2F&amp;screen=1280x1024&amp;ac=1321136746736"></a>
+                <script type="text/javascript" src="http://logging.ourstats.de/js.php?ID=719764&amp;style=blue"></script>
+                <a target="_blank" href="http://stats.ourstats.de/?ID=719764">
+                    <img border="0" alt="ourSTATS.de - kostenloser Statistik Counter" src="http://logging.ourstats.de/logging.php?ID=719764&amp;style=blue&amp;js=1&amp;cookie=y&amp;lang=de&amp;ref=http%253A%2F%2Fwww.yousa.de%2F14plus1%2Fasg%2F&amp;screen=1280x1024&amp;ac=1321136746736"/>
+                </a>
                 <noscript>
                     &lt;a href="http://stats.ourstats.de/?ID=719764" target="_blank"&gt;
                     &lt;img src="http://logging.ourstats.de/logging.php?ID=719764&amp;js=0&amp;style=blue" border="0" /&gt;
                     &lt;/a&gt;
                 </noscript>
+                <br/>
+                Zuletzt aktualisiert: 
+                <?php
+                $wtage = array("Sonntag",
+                    "Montag",
+                    "Dienstag",
+                    "Mittwoch",
+                    "Donnerstag",
+                    "Freitag",
+                    "Samstag");
+                echo $wtage[date("w", time())] . ", " . date('j.m.Y H:i', time())
+                ?>
             </div>
         </div>
     </body>

@@ -49,6 +49,7 @@
     z-index:200;
     /*top:1em;
     /*left:0;*/
+    box-shadow: 10pt 10pt 50pt #888888;
 }
 .menu li:hover ul{
     display:block;
@@ -70,14 +71,13 @@
 .menu li ul a{
     display:block;
     line-height:18pt;
-    font-size:18pt;
     font-style:normal;
     margin:0px;
     padding:5pt 10pt 5pt 15pt;
     text-align:left;
 }
 .menu li ul a:hover, .menu li ul li:hover a{
-    background:#222222 url('images/hover_v.png') center left no-repeat;
+    background: #3C5A9D url('images/hover_v.png') center left no-repeat;
     color:#ffffff;
     text-decoration:none;
 }
