@@ -15,7 +15,7 @@
     </head>
     <body>
         <div id="header">
-            <a href="http://der-vertretungsplan.de"><h1>Der Vertretungsplan</h1></a>
+            <a href="http://der-vertretungsplan.de.vu"><h1>Der Vertretungsplan</h1></a>
             
         <div class="bgreplacements replacements">
             <?php
