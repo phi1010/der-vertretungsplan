@@ -94,9 +94,13 @@ a{
     border-top-style: groove;
     border-top-width: 2pt;
 }
+#footer p{
+    text-align: center;
+}
 /* === VERTRETUNGSPLAN === */
 .bgreplacements{
     background-color: #ffffff;
+    box-shadow: -2pt 0pt 5pt #999999 inset;
 }
 .replacements {
     text-align: center;
@@ -111,12 +115,9 @@ a{
     list-style: none;
     background: #eeeeee;
     padding: 0;
+    box-shadow: 2pt 2pt 5pt #999999;
 }
 .replacements li{
-    border-color: #dddddd;
-    border-width:  1pt;
-    border-style: solid;
-    border-spacing: 0pt;
     margin: 3pt 0;
 }
 .replacements table{
@@ -128,6 +129,10 @@ a{
     border-width:  1pt;
     border-style: solid;
     border-spacing: 0pt;
+    position: relative;
+    z-index: 50;
+    box-shadow: 2pt 2pt 5pt #999999;
+    margin-bottom: 4pt;
 }
 .replacements th{
     border-top-color: #888888;

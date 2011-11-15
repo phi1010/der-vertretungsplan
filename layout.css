@@ -42,7 +42,7 @@ body {
     float:left;
     position:relative;
     padding:0 0 1em 0;
-    overflow:hidden;
+    /*overflow:hidden;*/
 }
 /* 3 Column settings */
 .threecol {

@@ -19,6 +19,7 @@
     line-height:24pt;
     margin:0pt;
     padding:0pt 20pt;
+    text-decoration: none;
 }
 .menu li.seperator{
     background: url("images/sep_h.gif");
