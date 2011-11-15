@@ -32,48 +32,51 @@ function replacementsFormatter_format($data) {
         $res .= "<h2>$date</h2>\n";
 
         // ANMERKUNGEN
-        $res .= "<ul>\n";
-        foreach ($day['Notices'] as $notice) {
-            $res .= "<li>$notice</li>\n";
+        if (count($day['Notices']) > 0) {
+            $res .= "<ul>\n";
+            foreach ($day['Notices'] as $notice) {
+                $res .= "<li>$notice</li>\n";
+            }
+            $res .= "</ul>\n";
         }
-        $res .= "</ul>\n";
 
         // VERTRETUNGEN
-        $res .= "<table>\n";
-        $res .= "<tr class=\"title\">\n";
-        $res .= "<th class=\"course\">Klasse</td>\n";
-        $res .= "<th class=\"lesson\">Std.</td>\n";
-        $res .= "<th class=\"oldsubject\">urspr. Fach</td>\n";
-        $res .= "<th class=\"newteacher\">Vertretung</td>\n";
-        $res .= "<th class=\"room\">Raum</td>\n";
-        $res .= "<th class=\"newsubject\">Fach</td>\n";
-        $res .= "<th class=\"description\">Bemerkung</td>\n";
-        $res .= "</tr>\n";
-        $even = false;
-        foreach ($day['Entries'] as $entry) {
-            $eventext = $even ? "even" : "odd";
-            $even = !$even;
-
-            $course = $entry['Course'];
-            $lesson = $entry['Lesson'];
-            $oldsubject = $entry['OldSubject'];
-            $newteacher = $entry['NewTeacher'];
-            $newsubject = $entry['NewSubject'];
-            $room = $entry['Room'];
-            $description = $entry['Instead'] . (($entry['Instead'] != "" && $entry['Description'] != "") ? "; " : "") . $entry['Description'];
-
-            $res .= "<tr class=\"$eventext\">\n";
-            $res .= "<td class=\"course\">$course</td>\n";
-            $res .= "<td class=\"lesson\">$lesson</td>\n";
-            $res .= "<td class=\"oldsubject\">$oldsubject</td>\n";
-            $res .= "<td class=\"newteacher\">$newteacher</td>\n";
-            $res .= "<td class=\"newsubject\">$newsubject</td>\n";
-            $res .= "<td class=\"room\">$room</td>\n";
-            $res .= "<td class=\"description\">$description</td>\n";
+        if (count($day['Entries']) > 0) {
+            $res .= "<table>\n";
+            $res .= "<tr class=\"title\">\n";
+            $res .= "<th class=\"course\">Klasse</td>\n";
+            $res .= "<th class=\"lesson\">Std.</td>\n";
+            $res .= "<th class=\"oldsubject\">urspr. Fach</td>\n";
+            $res .= "<th class=\"newteacher\">Vertretung</td>\n";
+            $res .= "<th class=\"room\">Raum</td>\n";
+            $res .= "<th class=\"newsubject\">Fach</td>\n";
+            $res .= "<th class=\"description\">Bemerkung</td>\n";
             $res .= "</tr>\n";
-        }
-        $res .= "</table>\n";
+            $even = false;
+            foreach ($day['Entries'] as $entry) {
+                $eventext = $even ? "even" : "odd";
+                $even = !$even;
 
+                $course = $entry['Course'];
+                $lesson = $entry['Lesson'];
+                $oldsubject = $entry['OldSubject'];
+                $newteacher = $entry['NewTeacher'];
+                $newsubject = $entry['NewSubject'];
+                $room = $entry['Room'];
+                $description = $entry['Instead'] . (($entry['Instead'] != "" && $entry['Description'] != "") ? "; " : "") . $entry['Description'];
+
+                $res .= "<tr class=\"$eventext\">\n";
+                $res .= "<td class=\"course\">$course</td>\n";
+                $res .= "<td class=\"lesson\">$lesson</td>\n";
+                $res .= "<td class=\"oldsubject\">$oldsubject</td>\n";
+                $res .= "<td class=\"newteacher\">$newteacher</td>\n";
+                $res .= "<td class=\"newsubject\">$newsubject</td>\n";
+                $res .= "<td class=\"room\">$room</td>\n";
+                $res .= "<td class=\"description\">$description</td>\n";
+                $res .= "</tr>\n";
+            }
+            $res .= "</table>\n";
+        }
         // ÄNDERUNG
         $res .= "<cite>Letzte Änderung: $changed</cite>\n";
     }
@@ -99,7 +102,7 @@ function replacementsFormatter_getDayCountText($numberOfDays) {
             return "&Uuml;bermorgen";
         default:
             if (abs($numberOfDays) >= 7)
-                return ($numberOfDays < 0) ? ("Vor " . (floor(-$numberOfDays/7)) . " Wochen") : ("In " . (floor($numberOfDays/7)) . " Wochen");
+                return ($numberOfDays < 0) ? ("Vor " . (floor(-$numberOfDays / 7)) . " Wochen") : ("In " . (floor($numberOfDays / 7)) . " Wochen");
             else
                 return ($numberOfDays < 0) ? ("Vor " . (-$numberOfDays) . " Tagen") : ("In " . $numberOfDays . " Tagen");
     }
