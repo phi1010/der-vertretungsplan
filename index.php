@@ -17,8 +17,9 @@
     <body>
         <div id="header">
             <img src="Calendar-256.png" id="logo" alt="Der-Vertretungsplan-Logo" />
-            <h1>
-                Der Vertretungsplan</h1>
+            <a href="http://der-vertretungsplan.de.vu">
+                <h1>Der Vertretungsplan</h1>
+            </a>
             <div class="menu">
                 <ul>
                     <li><a href="#" onclick="window.location.reload();return false;">Aktualisieren</a></li>
@@ -41,7 +42,7 @@
                         </ul>
                     </li>
                     <li class="seperator" />
-                    <li><a href="/faq.php">Links</a>
+                    <li><a href="#">Links</a>
                         <ul>
                             <li><a href="http://asg-er.dyndns.org/vertretung/">ASG Vertretungs&shy;plan</a></li>
                             <li class="seperator" />
@@ -84,18 +85,6 @@
                         Termine:</h1>
                     <p>Bitte beachten sie, dass die Termine noch nicht automatisch aktualisiert werden.</p>
                     <ul>
-                        <li><span style="font-weight: bold;">Mi 09. November, 14:00 Uhr: </span>Pädagogische
-                            Klassenkonferenzen </li>
-                        <li><span style="font-weight: bold;">Fr 11. November:</span> Schulmilchaktion in den
-                            Klassen 5-10 </li>
-                        <li><span style="font-weight: bold;">Sa 12. November, 09:00 - 13:30 Uhr:</span> EBIT
-                            - <a href="fileadmin/uploads/homepagegruppe/Schulleitung/EBIT_2011_Flyer.pdf"><span
-                                    style="font-weight: bold;">E</span>rlanger <span style="font-weight: bold;">B</span>erufs<span
-                                    style="font-weight: bold;">I</span>nformations<span style="font-weight: bold;">T</span>ag
-                            </a>am ASG - hochinteressant für Schülerinnen und Schüler ab der 10. Jgst.!
-                        </li>
-                        <li><span style="font-weight: bold;">Di, 15. November, 19:00 Uhr:</span> Sportelternabend</li>
-                        <li><span style="font-weight: bold;">Mi, 16. November:</span> Buß- und Bettag: unterrichtsfrei</li>
                         <li><span style="font-weight: bold;">Mo, 21. November, 18:30 Uhr:</span> Klassenelternabende
                             der 7. Klassen</li>
                         <li><span style="font-weight: bold;">Mo, 21. November, 19:00 Uhr:</span> Skilager-Info
