@@ -3,26 +3,32 @@
 /* === ALLGEMEIN === */
 body
 {
-    font-family: "Cambria","Cambria",serif;
+    font-family: "Sansation","Cambria",serif;
     background:#ffffff;
     color:#333333;
     font-size: 75%;
 }
 h1
 {
-    font-family:  "DroidSerif", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-family:  "TrashHand", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
 }
 p
 {
     text-align: justify;
     word-wrap: break-word;
 }
+a{
+    text-decoration: underline;
+    color: inherit;
+}
 
 /* === HEADER === */
 #header{
-    font-family:  "DroidSerifRegular", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    font-family:  "TrashHand", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
     height: 24pt;
-    box-shadow: 0pt 10pt 5pt #999999;
+    border-bottom-color: #999999;
+    border-bottom-style: groove;
+    border-bottom-width: 2pt;
 }
 
 #header h1{
@@ -30,9 +36,16 @@ p
     line-height: 24pt;
     text-align: center;
     margin:0;
-    background: #FFFFFF;
-    color: #333333;
-    text-shadow: 2pt 2pt 5pt #888888;
+    color: #FFFFFF;
+    text-shadow: 2pt 2pt 5pt #000000;
+    background: -moz-linear-gradient(top,  #4c4c4c 0%, #595959 12%, #666666 25%, #474747 47%, #333333 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(12%,#595959), color-stop(25%,#666666), color-stop(47%,#474747), color-stop(100%,#333333));
+    background: -webkit-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 47%, #333333 100%);
+    background: -o-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 47%, #333333 100%);
+    background: -ms-linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 47%, #333333 100%);
+    background: linear-gradient(top,  #4c4c4c 0%,#595959 12%,#666666 25%,#474747 47%, #333333 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#333333',GradientType=0 );
+    /*http://www.colorzilla.com/gradient-editor/#4c4c4c+0,595959+12,666666+25,474747+47,2c2c2c+59,2b2b2b+76,333333+100;Custom*/
 }
 
 
@@ -41,16 +54,24 @@ p
     text-align: center;
     background-color: #333333;
     color:#FFFFFF;
+    box-shadow: 0pt -5pt 5pt #999999;
+    border-top-color: #999999;
+    border-top-style: groove;
+    border-top-width: 2pt;
+}
+#footer p{
+    text-align: center;
 }
 /* === VERTRETUNGSPLAN === */
 .bgreplacements{
-    padding-top: 5pt;
+    background-color: #ffffff;
 }
 .replacements {
     text-align: center;
+    padding-bottom: 6pt;
 }
 .replacements h2{
-    font-family: "Cambria","Times",serif;
+    font-family: "SansationBold","Times",serif;
 }
 .replacements h2~h2 { 
     margin-top: 36pt;
@@ -59,24 +80,28 @@ p
     list-style: none;
     background: #eeeeee;
     padding: 0;
+    box-shadow: 2pt 2pt 5pt #999999;
 }
 .replacements li{
-    border-color: #dddddd;
-    border-width:  1pt;
-    border-style: solid;
-    border-spacing: 0pt;
-    margin: 0;
+    margin: 3pt 0;
 }
 .replacements table{
     list-style: none;
     background: #eeeeee;
     width:100%;
     border-collapse: collapse;
+    border-color: #dddddd;
+    border-width:  1pt;
+    border-style: solid;
+    border-spacing: 0pt;
+    position: relative;
+    z-index: 50;
+    box-shadow: 2pt 2pt 5pt #999999;
+    margin-bottom: 4pt;
 }
 .replacements th{
     border-top: 1pt solid #888888;
     border-bottom:2pt groove #888888;
-    color: #002475;
 }
 .replacements td{
     padding: 0 10pt;
@@ -90,6 +115,7 @@ p
     vertical-align: top;
     border-left:  1pt solid #888888;
     border-right:  1pt solid #888888;
+    line-height: 125%;
 }
 .replacements tr:last-of-type td{
     border-bottom:  1pt solid #888888;

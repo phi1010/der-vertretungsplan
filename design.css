@@ -30,6 +30,7 @@ a{
     border-bottom-color: #999999;
     border-bottom-style: groove;
     border-bottom-width: 2pt;
+    box-shadow: 0pt 5pt 5pt #999999;
 }
 
 #header h1{
@@ -104,6 +105,7 @@ a{
 }
 .replacements {
     text-align: center;
+    padding-bottom: 6pt;
 }
 .replacements h2{
     font-family: "SansationBold","Times",serif;
@@ -135,38 +137,29 @@ a{
     margin-bottom: 4pt;
 }
 .replacements th{
-    border-top-color: #888888;
-    border-top-width:  2pt;
-    border-top-style: groove;
-    border-top-spacing: 0pt;
-    border-bottom-color: #888888;
-    border-bottom-width:  2pt;
-    border-bottom-style: groove;
-    border-bottom-spacing: 0pt;
+    border-top: 1pt solid #888888;
+    border-bottom:2pt groove #888888;
 }
 .replacements td{
     padding: 0 10pt;
-    border-bottom-color: #FFFFFF;
-    border-bottom-width:  1pt;
-    border-bottom-style: solid;
-    border-bottom-spacing: 0pt;
+    border-bottom: 1pt solid #FFFFFF;
     margin: 0pt;
-    line-height: 18pt;
-    font-size: 12pt;
     vertical-align: top;
 }
 .replacements th, .replacements td{
     padding: 0 10pt;
     margin: 0pt;
-    line-height: 18pt;
-    font-size: 12pt;
     vertical-align: top;
+    line-height: 150%;
+}
+.replacements tr:last-of-type td{
+    border-bottom:  1pt solid #888888;
 }
 .replacements .description{
     width:100%;
     text-align: justify;
 }
-.replacements .even
+.replacements .odd
 {
     background-color: #B4CBFF;
 }
