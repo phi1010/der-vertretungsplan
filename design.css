@@ -3,7 +3,7 @@
 /* === ALLGEMEIN === */
 body
 {
-    font-family: "Cambria","Cambria",serif;
+    font-family: "Sansation","Cambria",serif;
     background:#ffffff;
     color:#333333;
     min-width:6.25in;
@@ -93,7 +93,7 @@ a{
     text-align: center;
 }
 .replacements h2{
-    font-family: "Cambria","Times",serif;
+    font-family: "SansationBold","Times",serif;
 }
 .replacements h2~h2 { 
     margin-top: 1in;
