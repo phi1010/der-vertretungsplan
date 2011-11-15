@@ -78,7 +78,8 @@ function replacementsFormatter_format($data) {
             $res .= "</table>\n";
         }
         // ÄNDERUNG
-        $res .= "<cite>Letzte Änderung: $changed</cite>\n";
+        $url = $day['URL'];
+        $res .= "<cite>Quelle: <a href=\"$url\">$url</a><br/>Letzte Änderung: $changed</cite>\n";
     }
     return $res;
 }
