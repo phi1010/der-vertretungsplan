@@ -66,8 +66,8 @@
                 </ul>
             </div>
         </div>
-        <div class="colmask rightmenu content">
-            <div class="colleft">
+        <div class="colmask rightmenu bgevents">
+            <div class="colleft bgreplacements">
                 <div class="col1 replacements">
                     <h1>Vertretungen:</h1>
                     <?php
@@ -118,7 +118,7 @@
             </div>
         </div>
         <div id="footer">
-            <div id="footerbox">
+            <div id="padding">
                 Alle Angaben ohne Gewähr.
                 <br/>
                 Beim Besuch dieser Website werden IP-Adresse, Bildschirmgröße, Browserversion und ähnliche Informationen erfasst, um eine öffentliche Statistik zu erstellen.

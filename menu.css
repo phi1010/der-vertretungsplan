@@ -4,7 +4,6 @@
     margin: 0;
 }
 .menu ul{
-    background:#333333;
     height:24pt;
     list-style:none;
     margin: 0;
@@ -33,13 +32,8 @@
     background-repeat:  no-repeat;
 }
 .menu li ul{
-    transition: height 0.5s ease-in-out;
-    -moz-transition: height 0.5s ease-in-out;
-    -o-transition: height 0.5s ease-in-out;
-    -webkit-transition: height 0.5s ease-in-out;
-    background:#333333;
     display:block;
-    height:0px;
+    height:0;
     overflow:hidden;
     padding:0px;
     margin:0px;
@@ -56,7 +50,6 @@
     height:auto;
 }
 .menu li li {
-    /*background:url('images/sep_v.gif') bottom left no-repeat;*/
     display:block;
     float:none;
     margin:0px;
@@ -77,9 +70,12 @@
     text-align:left;
 }
 .menu li ul a:hover, .menu li ul li:hover a{
-    background: #3C5A9D url('images/hover_v.png') center left no-repeat;
-    color:#ffffff;
-    text-decoration:none;
+    background-image: url('images/hover_v.png');
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+.menu li:hover li a{
+    background-image: none;
 }
 .menu p{
     clear:left;

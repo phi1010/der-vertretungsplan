@@ -1,0 +1,104 @@
+/* Farbschema: http://colorschemedesigner.com/#2m52Pw0w0w0w0 + #333333 + #FFFFFF + #000000*/
+
+/* === ALLGEMEIN === */
+body
+{
+    font-family: "Cambria","Cambria",serif;
+    background:#ffffff;
+    color:#333333;
+    font-size: 75%;
+}
+h1
+{
+    font-family:  "DroidSerif", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+}
+p
+{
+    text-align: justify;
+    word-wrap: break-word;
+}
+
+/* === HEADER === */
+#header{
+    font-family:  "DroidSerifRegular", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    height: 24pt;
+    box-shadow: 0pt 10pt 5pt #999999;
+}
+
+#header h1{
+    font-size: 18pt;
+    line-height: 24pt;
+    text-align: center;
+    margin:0;
+    background: #FFFFFF;
+    color: #333333;
+    text-shadow: 2pt 2pt 5pt #888888;
+}
+
+
+/* === FOOTER === */
+#footer{
+    text-align: center;
+    background-color: #333333;
+    color:#FFFFFF;
+}
+/* === VERTRETUNGSPLAN === */
+.bgreplacements{
+    padding-top: 5pt;
+}
+.replacements {
+    text-align: center;
+}
+.replacements h2{
+    font-family: "Cambria","Times",serif;
+}
+.replacements h2~h2 { 
+    margin-top: 36pt;
+}
+.replacements ul{
+    list-style: none;
+    background: #eeeeee;
+    padding: 0;
+}
+.replacements li{
+    border-color: #dddddd;
+    border-width:  1pt;
+    border-style: solid;
+    border-spacing: 0pt;
+    margin: 0;
+}
+.replacements table{
+    list-style: none;
+    background: #eeeeee;
+    width:100%;
+    border-collapse: collapse;
+}
+.replacements th{
+    border-top: 1pt solid #888888;
+    border-bottom:2pt groove #888888;
+    color: #002475;
+}
+.replacements td{
+    padding: 0 10pt;
+    border-bottom: 1pt solid #FFFFFF;
+    margin: 0pt;
+    vertical-align: top;
+}
+.replacements th, .replacements td{
+    padding: 0 2pt;
+    margin: 0pt;
+    vertical-align: top;
+    border-left:  1pt solid #888888;
+    border-right:  1pt solid #888888;
+}
+.replacements tr:last-of-type td{
+    border-bottom:  1pt solid #888888;
+}
+.replacements .description{
+    width:100%;
+    text-align: justify;
+}
+.replacements .even
+{
+    background-color: #B4CBFF;
+}

@@ -26,7 +26,10 @@ a{
 /* === HEADER === */
 #header{
     font-family:  "TrashHand", "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
-    height: 1in;
+    height: 1in;    
+    border-bottom-color: #999999;
+    border-bottom-style: groove;
+    border-bottom-width: 2pt;
 }
 
 #header h1{
@@ -55,8 +58,11 @@ a{
 .menu{
     font-size: 18pt;
 }
-.menu li ul a{
-    font-size:18pt;
+.menu ul{
+    background-color:#333333;
+}
+.menu li ul{
+    background-color:#333333;
 }
 .menu li a{
     transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
@@ -64,31 +70,34 @@ a{
     -o-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
     -webkit-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
     background-color: #333333;
-    background-position: bottom right;
-    background-repeat: no-repeat;
     color:#FFFFFF;
-    text-align:center;
-    text-decoration:none;
 }
 .menu li a:hover, .menu ul li:hover a{
     background-color: #3C5A9D;
     color:#ffffff;
-    text-decoration:none;
+}
+.menu li ul a:hover, .menu li ul li:hover a{
+    background-color: #3C5A9D;
+    color:#ffffff;
 }
 .menu li:hover li a{
-    background:none;
     color:#FFFFFF;
+    background-color:#333333;
 }
 /* === FOOTER === */
 #footer{
     text-align: center;
     background-color: #333333;
     color:#FFFFFF;
-}
-/* === CONTENT === */
-.content{
+    box-shadow: 0pt -5pt 5pt #999999;
+    border-top-color: #999999;
+    border-top-style: groove;
+    border-top-width: 2pt;
 }
 /* === VERTRETUNGSPLAN === */
+.bgreplacements{
+    background-color: #ffffff;
+}
 .replacements {
     text-align: center;
 }
@@ -157,6 +166,9 @@ a{
     background-color: #B4CBFF;
 }
 /* === MELDUNGEN === */
+.bgevents{
+    background-color: #eeeeee;
+}
 .events{
 
 }

@@ -5,6 +5,11 @@ body {
     border:0;			/* This removes the border around the viewport in old versions of IE */
     width:100%;
 }
+.padding{
+    position: relative;
+    left: 2%;
+    width: 96%;
+}
 /* Header styles */
 #header {
     clear:both;
@@ -13,9 +18,6 @@ body {
     z-index: 100;
     box-shadow: 0pt 5pt 5pt #999999;
     position: relative;
-    border-bottom-color: #999999;
-    border-bottom-style: groove;
-    border-bottom-width: 2pt;
 
 }
 /* column container */
@@ -44,15 +46,15 @@ body {
 }
 /* 3 Column settings */
 .threecol {
-    background:#eee;		/* right column background colour */
+    /*background:#eee;		 right column background colour */
 }
 .threecol .colmid {
     right:25%;			/* width of the right column */
-    background:#fff;		/* center column background colour */
+    /*background:#fff;		 center column background colour */
 }
 .threecol .colleft {
     right:50%;			/* width of the middle column */
-    background:#f4f4f4;	/* left column background colour */
+    /*background:#f4f4f4;	 left column background colour */
 }
 .threecol .col1 {
     width:46%;			/* width of center column content (column width minus padding on either side) */
@@ -69,15 +71,15 @@ body {
 }
 /* 3 Column blog style settings */
 .blogstyle {
-    background:#eee;		/* right column background colour */
+    /*background:#eee;		 right column background colour */
 }
 .blogstyle .colmid {
     right:25%;			/* width of the right column */
-    background:#f4f4f4;	/* center column background colour */
+    /*background:#f4f4f4;	 center column background colour */
 }
 .blogstyle .colleft {
     right:25%;			/* width of the middle column */
-    background:#fff;		/* left column background colour */
+    /*background:#fff;		 left column background colour */
 }
 .blogstyle .col1 {
     width:46%;			/* width of center column content (column width minus padding on either side) */
@@ -94,11 +96,11 @@ body {
 }
 /* 2 Column (left menu) settings */
 .leftmenu {
-    background:#fff;		/* right column background colour */
+    /*background:#fff;		 right column background colour */
 }
 .leftmenu .colleft {
     right:75%;			/* right column width */
-    background:#f4f4f4;	/* left column background colour */
+    /*background:#f4f4f4;	 left column background colour */
 }
 .leftmenu .col1 {
     width:71%;			/* right column content width */
@@ -110,11 +112,11 @@ body {
 }
 /* 2 Column (right menu) settings */
 .rightmenu {
-    background:#eee;		/* right column background colour */
+    /*background:#eee;		 right column background colour */
 }
 .rightmenu .colleft {
     right:25%;			/* right column width */
-    background:#fff;		/* left column background colour */
+    /*background:#fff;		 left column background colour */
 }
 .rightmenu .col1 {
     width:71%;			/* left column content width (left column width minus left and right padding) */
@@ -126,11 +128,11 @@ body {
 }
 /* 2 Column (double page) settings */
 .doublepage {
-    background:#eee;		/* right column background colour */
+    /*background:#eee;		 right column background colour */
 }
 .doublepage .colleft {
     right:50%;			/* right column width */
-    background:#fff;		/* left column background colour */
+    /*background:#fff;		 left column background colour */
 }
 .doublepage .col1 {
     width:46%;			/* left column content width (column width minus left and right padding) */
@@ -142,7 +144,7 @@ body {
 }
 /* Full page settings */
 .fullpage {
-    background:#fff;		/* page background colour */
+    /*background:#fff;		 page background colour */
 }
 .fullpage .col1 {
     width:96%;			/* page width minus left and right padding */
@@ -155,13 +157,5 @@ body {
     width:100%;
     overflow: hidden;
     position: relative;
-    box-shadow: 0pt -5pt 5pt #999999;
-    border-top-color: #999999;
-    border-top-style: groove;
-    border-top-width: 2pt;
-}
-#footerbox{
-    position: relative;
-    left: 2%;
-    width: 96%;
+    z-index: 100;
 }
