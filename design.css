@@ -41,11 +41,12 @@ p
     float: right;
 }
 /* === MENU === */
-.menu{
-    font-size: 14pt;
+
+.menu ul{
+    background-color:#333333;
 }
-.menu li ul a{
-    font-size:12pt;
+.menu li ul{
+    background-color:#333333;
 }
 .menu li a{
     transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
@@ -54,20 +55,20 @@ p
     -webkit-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
     /*border-right: 1px groove #9FEE00;*/
     background-color: #333333;
-    background-position: bottom right;
-    background-repeat: no-repeat;
     color:#FFFFFF;
-    text-align:center;
-    text-decoration:none;
+    text-decoration: none;
 }
 .menu li a:hover, .menu ul li:hover a{
     background-color: #222222;
     color:#ffffff;
-    text-decoration:none;
+}
+.menu li ul a:hover, .menu li ul li:hover a{
+    background-color: #222222;
+    color:#ffffff;
 }
 .menu li:hover li a{
-    background:none;
     color:#FFFFFF;
+    background-color:#333333;
 }
 /* === FOOTER === */
 #footer{
@@ -75,10 +76,11 @@ p
     background-color: #333333;
     color:#FFFFFF;
 }
-/* === CONTENT === */
-.content{
-}
 /* === VERTRETUNGSPLAN === */
+.bgreplacements{
+    background-color: #ffffff;
+    box-shadow: 0pt 10pt 5pt #999999 inset;
+}
 .replacements {
     text-align: center;
 }
@@ -144,6 +146,10 @@ p
     background-color: #B4CBFF;
 }
 /* === MELDUNGEN === */
+.bgevents{
+    background-color: #eeeeee;
+    box-shadow: 0pt 10pt 5pt #999999 inset;
+}
 .events{
 
 }
