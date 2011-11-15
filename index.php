@@ -12,10 +12,11 @@
         <link rel="stylesheet" type="text/css" href="layout.css" />
         <link rel="stylesheet" type="text/css" href="menu.css" />
         <link rel="stylesheet" type="text/css" href="design.css" />
+        <script type="text/javascript" src="targetblank.js"></script>
     </head>
     <body>
         <div id="header">
-            <img src="Calendar-256.png" id="logo" />
+            <img src="Calendar-256.png" id="logo" alt="Der-Vertretungsplan-Logo" />
             <h1>
                 Der Vertretungsplan</h1>
             <div class="menu">
@@ -24,25 +25,43 @@
                     <li class="seperator" />
                     <li><a href="#" id="current">Mitwirken</a>
                         <ul>
-                            <li><a href="http://webchat.esper.net/?channels=#vertretungsplan" target="_blank">Webchat @ esper.net</a></li>
+                            <li><a href="http://webchat.esper.net/?channels=#vertretungsplan">Webchat @ esper.net</a></li>
                             <li class="seperator" />
                             <!--<li><a href="#">IRC @esper.net</a></li>-->
-                            <li><a href="https://github.com/phi1010/der-vertretungsplan" target="_blank">Quell&shy;code&shy;hosting
+                            <li><a href="https://github.com/phi1010/der-vertretungsplan">Quell&shy;code&shy;hosting
                                     @ Git&shy;Hub</a></li>
                             <li class="seperator" />
-                            <li><a href="http://der-vertretungsplan.ietherpad.com/1" target="_blank">Etherpad @ iEtherpad</a></li>
+                            <li><a href="http://der-vertretungsplan.ietherpad.com/1">Etherpad @ iEtherpad</a></li>
+                            <li class="seperator" />
+                            <li>
+                                <a href="http://validator.w3.org/check?uri=referer"><img
+                                        src="images/valid_xhtml10_blue.png" alt="Valid XHTML 1.0 Strict"/>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="seperator" />
                     <li><a href="/faq.php">Links</a>
                         <ul>
-                            <li><a href="http://asg-er.dyndns.org/vertretung/" target="_blank">ASG Vertretungs&shy;plan</a></li>
+                            <li><a href="http://asg-er.dyndns.org/vertretung/">ASG Vertretungs&shy;plan</a></li>
                             <li class="seperator" />
-                            <li><a href="http://asg-er.de/" target="_blank">ASG Homepage</a></li>
+                            <li><a href="http://asg-er.de/">ASG Homepage</a></li>
+                            <li class="seperator"/>
+                            <li>
+                                <script type="text/javascript" src="http://logging.ourstats.de/js.php?ID=719764&amp;style=blue">
+                                </script>
+                                <noscript>
+                                    <div>
+                                        <a href="http://stats.ourstats.de/?ID=719764">
+                                            <img alt="ourSTATS.de - kostenloser Statistik Counter" src="http://logging.ourstats.de/logging.php?ID=719764&amp;style=blue&amp;js=1&amp;cookie=y&amp;lang=de&amp;ref=http%253A%2F%2Fwww.yousa.de%2F14plus1%2Fasg%2F&amp;screen=1280x1024&amp;ac=1321136746736"/>
+                                        </a>
+                                    </div>
+                                </noscript>
+                            </li>
                         </ul>
                     </li>
                     <li class="seperator" />
-                    <li><a href="http://webchat.esper.net/?channels=#vertretungsplan" target="_blank">Kontakt</a></li>
+                    <li><a href="http://webchat.esper.net/?channels=#vertretungsplan">Kontakt</a></li>
                     <li class="seperator" />
                 </ul>
             </div>
@@ -104,14 +123,6 @@
                 <br/>
                 Beim Besuch dieser Website werden IP-Adresse, Bildschirmgröße, Browserversion und ähnliche Informationen erfasst, um eine öffentliche Statistik zu erstellen.
                 <br/>
-                <script type="text/javascript" src="http://logging.ourstats.de/js.php?ID=719764&amp;style=blue">
-                </script>
-                <noscript>
-                    <a target="_blank" href="http://stats.ourstats.de/?ID=719764">
-                        <img border="0" alt="ourSTATS.de - kostenloser Statistik Counter" src="http://logging.ourstats.de/logging.php?ID=719764&amp;style=blue&amp;js=1&amp;cookie=y&amp;lang=de&amp;ref=http%253A%2F%2Fwww.yousa.de%2F14plus1%2Fasg%2F&amp;screen=1280x1024&amp;ac=1321136746736"/>
-                    </a>
-                </noscript>
-                <br/>
                 Zuletzt aktualisiert: 
                 <?php
                 $wtage = array("Sonntag",
@@ -121,7 +132,7 @@
                     "Donnerstag",
                     "Freitag",
                     "Samstag");
-                echo $wtage[date("w", time())] . ", " . date('j.m.Y H:i', time())
+                echo $wtage[date("w", time())] . ", " . date('j.m.Y H:i', time());
                 ?>
             </div>
         </div>

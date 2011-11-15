@@ -44,13 +44,13 @@ function replacementsFormatter_format($data) {
         if (count($day['Entries']) > 0) {
             $res .= "<table>\n";
             $res .= "<tr class=\"title\">\n";
-            $res .= "<th class=\"course\">Klasse</td>\n";
-            $res .= "<th class=\"lesson\">Std.</td>\n";
-            $res .= "<th class=\"oldsubject\">urspr. Fach</td>\n";
-            $res .= "<th class=\"newteacher\">Vertretung</td>\n";
-            $res .= "<th class=\"room\">Raum</td>\n";
-            $res .= "<th class=\"newsubject\">Fach</td>\n";
-            $res .= "<th class=\"description\">Bemerkung</td>\n";
+            $res .= "<th class=\"course\">Klasse</th>\n";
+            $res .= "<th class=\"lesson\">Std.</th>\n";
+            $res .= "<th class=\"oldsubject\">urspr. Fach</th>\n";
+            $res .= "<th class=\"newteacher\">Vertretung</th>\n";
+            $res .= "<th class=\"room\">Raum</th>\n";
+            $res .= "<th class=\"newsubject\">Fach</th>\n";
+            $res .= "<th class=\"description\">Bemerkung</th>\n";
             $res .= "</tr>\n";
             $even = false;
             foreach ($day['Entries'] as $entry) {
