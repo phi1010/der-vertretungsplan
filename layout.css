@@ -10,6 +10,13 @@ body {
     clear:both;
     float:left;
     width:100%;
+    z-index: 100;
+    box-shadow: 0pt 5pt 5pt #999999;
+    position: relative;
+    border-bottom-color: #999999;
+    border-bottom-style: groove;
+    border-bottom-width: 2pt;
+
 }
 /* column container */
 .colmask {
@@ -104,12 +111,10 @@ body {
 /* 2 Column (right menu) settings */
 .rightmenu {
     background:#eee;		/* right column background colour */
-    box-shadow: 0pt 10pt 5pt #999999 inset;
 }
 .rightmenu .colleft {
     right:25%;			/* right column width */
     background:#fff;		/* left column background colour */
-    box-shadow: 0pt 10pt 5pt #999999 inset;
 }
 .rightmenu .col1 {
     width:71%;			/* left column content width (left column width minus left and right padding) */
@@ -149,6 +154,11 @@ body {
     float:left;
     width:100%;
     overflow: hidden;
+    position: relative;
+    box-shadow: 0pt -5pt 5pt #999999;
+    border-top-color: #999999;
+    border-top-style: groove;
+    border-top-width: 2pt;
 }
 #footerbox{
     position: relative;
