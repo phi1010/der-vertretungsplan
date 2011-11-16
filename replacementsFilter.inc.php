@@ -8,7 +8,7 @@
 function replacementsFilter_filter($data) {
 
     function replacementsFilter_cmpDays($a) {
-        return $a['Date'] >= (time() - floor(time() % (60 * 60 * 24)));
+        return ceil(($a['Date'] - time()) / (60 * 60 * 24)) >= 0;
     }
 
     $data = array_filter($data, 'replacementsFilter_cmpDays');
