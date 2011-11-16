@@ -20,12 +20,12 @@ function replacementsFormatter_format($data) {
         $date = $day['Date'];
         $date = $wtage[date("w", $date)] . ", " . date('j.m.Y', $date)
                 . " ("
-                . replacementsFormatter_getDayCountText(ceil(($date - time() * 1.0) / 60 / 60 / 24))
+                . replacementsFormatter_getDayCountText(ceil(($date - time()) / (60 * 60 * 24)))
                 . ")";
         $changed = $day['DateChanged'];
         $changed = $wtage[date("w", $changed)] . ", " . date('j.m.Y G:i', $changed)
                 . " ("
-                . replacementsFormatter_getDayCountText(ceil(($changed - time() * 1.0) / 60 / 60 / 24))
+                . replacementsFormatter_getDayCountText(ceil(($changed - time()) / (60 * 60 * 24)))
                 . ")";
 
         //DATUM
