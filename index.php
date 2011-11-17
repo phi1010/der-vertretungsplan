@@ -31,14 +31,7 @@
                             <!--<li><a href="#">IRC @esper.net</a></li>-->
                             <li><a href="https://github.com/phi1010/der-vertretungsplan">Quell&shy;code&shy;hosting
                                     @ Git&shy;Hub</a></li>
-                            <li class="seperator" />
-                            <li><a href="http://der-vertretungsplan.ietherpad.com/1">Etherpad @ iEtherpad</a></li>
-                            <li class="seperator" />
-                            <li>
-                                <a href="http://validator.w3.org/check?uri=referer"><img
-                                        src="images/valid_xhtml10_blue.png" alt="Valid XHTML 1.0 Strict"/>
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
                     <li class="seperator" />
@@ -58,6 +51,12 @@
                                         </a>
                                     </div>
                                 </noscript>
+                            </li>
+                            <li class="seperator" />
+                            <li>
+                                <a href="http://validator.w3.org/check?uri=referer"><img
+                                        src="images/valid_xhtml10_blue.png" alt="Valid XHTML 1.0 Strict"/>
+                                </a>
                             </li>
                         </ul>
                     </li>
@@ -103,6 +102,7 @@
                             vor den Weihnachtsferien</li>
                         <li style="color: rgb(0, 102, 255);"><span style="font-weight: bold;">Dienstag, 14.
                                 Februar 2012, 19:00 Uhr:</span> Informationsabend für die zukünftige 5. Jahrgangsstufe</li></ul>
+                    <cite>Quelle: <a href="http://asg-er.de/index.htm">http://asg-er.de/index.htm</a></cite>
                 </div>
             </div>
         </div>
