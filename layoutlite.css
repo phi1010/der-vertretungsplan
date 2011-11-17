@@ -1,0 +1,30 @@
+/* General styles */
+body {
+    margin:0;
+    padding:0;
+    border:0;			/* This removes the border around the viewport in old versions of IE */
+    width:100%;
+}
+
+#header {
+    width:100%;
+    z-index: 100;
+    box-shadow: 0pt 5pt 5pt #999999;
+    position: relative;
+    margin:0;
+}
+
+.content{
+    margin:0;
+    position: relative;
+    padding: 0 2%;
+    width: 96%;
+}
+
+#footer {
+    width:100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 100;
+    margin:0;
+}

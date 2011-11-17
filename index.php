@@ -108,11 +108,9 @@
         </div>
         <div id="footer">
             <div id="padding">
-                Alle Angaben ohne Gewähr.
-                <br/>
-                Beim Besuch dieser Website werden IP-Adresse, Bildschirmgröße, Browserversion und ähnliche Informationen erfasst, um eine öffentliche Statistik zu erstellen.
-                <br/>
-                Zuletzt aktualisiert: 
+                <p>Alle Angaben ohne Gewähr.</p>
+                <p>Beim Besuch dieser Website werden IP-Adresse, Bildschirmgröße, Browserversion und ähnliche Informationen erfasst, um eine öffentliche Statistik zu erstellen.</p>
+                <p>Zuletzt aktualisiert: 
                 <?php
                 $wtage = array("Sonntag",
                     "Montag",
@@ -122,7 +120,7 @@
                     "Freitag",
                     "Samstag");
                 echo $wtage[date("w", time())] . ", " . date('j.m.Y H:i', time());
-                ?>
+                ?></p>
             </div>
         </div>
     </body>

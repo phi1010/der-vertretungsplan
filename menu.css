@@ -2,7 +2,6 @@
     padding:0px;
     font-weight:bold;
     margin: 0;
-    font-size: 14pt;
 }
 .menu ul{
     height:24pt;
@@ -20,6 +19,7 @@
     line-height:24pt;
     margin:0pt;
     padding:0pt 20pt;
+    text-decoration: none;
 }
 .menu li.seperator{
     background: url("images/sep_h.gif");
@@ -64,7 +64,6 @@
 .menu li ul a{
     display:block;
     line-height:18pt;
-    font-size:14pt;
     font-style:normal;
     margin:0px;
     padding:5pt 10pt 5pt 15pt;
