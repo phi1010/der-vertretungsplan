@@ -17,9 +17,7 @@
     <body>
         <div id="header">
             <img src="Calendar-256.png" id="logo" alt="Der-Vertretungsplan-Logo" />
-            <a href="http://der-vertretungsplan.de.vu">
-                <h1>Der Vertretungsplan</h1>
-            </a>
+                <h1><a href="http://der-vertretungsplan.de.vu">Der Vertretungsplan</a></h1>
             <div class="menu">
                 <ul>
                     <li><a href="#" onclick="window.location.reload();return false;">Aktualisieren</a></li>
