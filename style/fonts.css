@@ -1,0 +1,99 @@
+
+@font-face {
+    font-family: 'Sansation';
+    src: url('../fonts/Sansation/SansationRegular.eot');
+    src: url('../fonts/Sansation/SansationRegular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Sansation/SansationRegular.woff') format('woff'),
+         url('../fonts/Sansation/SansationRegular.ttf') format('truetype'),
+         url('../fonts/Sansation/SansationRegular.svg#SansationRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SansationLight';
+    src: url('../fonts/Sansation/SansationLight.eot');
+    src: url('../fonts/Sansation/SansationLight.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Sansation/SansationLight.woff') format('woff'),
+         url('../fonts/Sansation/SansationLight.ttf') format('truetype'),
+         url('../fonts/Sansation/SansationLight.svg#SansationLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SansationBold';
+    src: url('../fonts/Sansation/SansationBold.eot');
+    src: url('../fonts/Sansation/SansationBold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Sansation/SansationBold.woff') format('woff'),
+         url('../fonts/Sansation/SansationBold.ttf') format('truetype'),
+         url('../fonts/Sansation/SansationBold.svg#SansationBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'TrashHand';
+    src: url('../fonts/TrashHand/TrashHand.eot');
+    src: url('../fonts/TrashHand/TrashHand.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/TrashHand/TrashHand.woff') format('woff'),
+         url('../fonts/TrashHand/TrashHand.ttf') format('truetype'),
+         url('../fonts/TrashHand/TrashHand.svg#TrashHandRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ArchitectsDaughter';
+    src: url('../fonts/ArchitectsDaughter/ArchitectsDaughter.eot');
+    src: url('../fonts/ArchitectsDaughter/ArchitectsDaughter.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ArchitectsDaughter/ArchitectsDaughter.woff') format('woff'),
+         url('../fonts/ArchitectsDaughter/ArchitectsDaughter.ttf') format('truetype'),
+         url('../fonts/ArchitectsDaughter/ArchitectsDaughter.svg#ArchitectsDaughterRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'BelligerentMadness';
+    src: url('../fonts/BelligerentMadness/BelligerentMadness.eot');
+    src: url('../fonts/BelligerentMadness/BelligerentMadness.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/BelligerentMadness/BelligerentMadness.woff') format('woff'),
+         url('../fonts/BelligerentMadness/BelligerentMadness.ttf') format('truetype'),
+         url('../fonts/BelligerentMadness/BelligerentMadness.svg#BelligerentMadnessRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+/* Neu hinzugefügte Schriftarten */
+
+@font-face {
+    font-family: 'DroidSerif';
+    src: url('../fonts/DroidSerif/DroidSerifRegular.eot');
+    src: url('../fonts/DroidSerif/DroidSerifRegular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DroidSerif/DroidSerifRegular.woff') format('woff'),
+         url('../fonts/DroidSerif/DroidSerifRegular.ttf') format('truetype'),
+         url('../fonts/DroidSerif/DroidSerifRegular.svg#DroidSerifRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'DroidSerifBold';
+    src: url('../fonts/DroidSerif/DroidSerifBold.eot');
+    src: url('../fonts/DroidSerif/DroidSerifBold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/DroidSerif/DroidSerifBold.woff') format('woff'),
+         url('../fonts/DroidSerif/DroidSerifBold.ttf') format('truetype'),
+         url('../fonts/DroidSerif/DroidSerifBold.svg#DroidSerifBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

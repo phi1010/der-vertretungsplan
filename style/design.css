@@ -45,7 +45,7 @@ a{
 
 #logo
 {
-    height: 92px;
+    height: 48px;
     float: right;
 }
 /* === MENU === */
@@ -141,7 +141,7 @@ a{
     vertical-align: top;
 }
 .replacements th, .replacements td{
-    padding: 0 10pt;
+    padding: 0 2pt;
     margin: 0pt;
     vertical-align: top;
     line-height: 150%;

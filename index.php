@@ -1,4 +1,10 @@
-<?php header('content-type: text/html; charset=utf-8'); ?>
+<?php
+header('content-type: text/html; charset=utf-8');
+include_once('code/replacementsParser.inc.php');
+include_once('code/replacementsFilter.inc.php');
+include_once('code/replacementsSorter.inc.php');
+include_once('code/replacementsFormatter.inc.php');
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -8,15 +14,15 @@
         <meta name="keywords" content="Vertretungsplan ASG Albert Schweitzer Gymnasium Erlangen Schule Ausfall Lehrer Schüler Information" />
         <meta name="robots" content="index, follow" />
         <link rel="shortcut icon" href="---" type="image/x-icon" />
-        <link rel="stylesheet" type="text/css" href="fonts.css" />
-        <link rel="stylesheet" type="text/css" href="layout.css" />
-        <link rel="stylesheet" type="text/css" href="menu.css" />
-        <link rel="stylesheet" type="text/css" href="design.css" />
-        <script type="text/javascript" src="targetblank.js"></script>
+        <link rel="stylesheet" type="text/css" href="style/fonts.css" />
+        <link rel="stylesheet" type="text/css" href="style/layout.css" />
+        <link rel="stylesheet" type="text/css" href="style/menu.css" />
+        <link rel="stylesheet" type="text/css" href="style/design.css" />
+        <script type="text/javascript" src="script/targetblank.js"></script>
     </head>
     <body>
         <div id="header">
-            <img src="Calendar-256.png" id="logo" alt="Der-Vertretungsplan-Logo" />
+            <img src="images/Calendar-256.png" id="logo" alt="Der-Vertretungsplan-Logo" />
             <h1><a href="http://der-vertretungsplan.de.vu">Der Vertretungsplan</a></h1>
             <div class="menu">
                 <ul>
@@ -69,11 +75,6 @@
                 <div class="col1 replacements">
                     <h1>Vertretungen:</h1>
                     <?php
-                    include('replacementsParser.inc.php');
-                    include('replacementsFilter.inc.php');
-                    include('replacementsSorter.inc.php');
-                    include('replacementsFormatter.inc.php');
-
                     echo replacementsFormatter_format(replacementsSorter_sort(replacementsFilter_filter(replacementsParser_parse())));
                     ?>
                 </div>

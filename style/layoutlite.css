@@ -4,6 +4,8 @@ body {
     padding:0;
     border:0;			/* This removes the border around the viewport in old versions of IE */
     width:100%;
+    min-width:5in;
+    /*5in = 480px @ 96dpi => 480*320 */
 }
 
 #header {
