@@ -21,6 +21,15 @@ body {
     width: 96%;
 }
 
+.replacements{
+    position: relative;
+    max-width: 100%;
+}
+
+.replacements table{
+    max-width: 100%;
+}
+
 #footer {
     width:100%;
     overflow: hidden;

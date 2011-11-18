@@ -1,4 +1,4 @@
-var ownurlpatt = /der-vertretungsplan\.de/;  // gegen Ihre eigene URL ersetzen!
+var ownurlpatt = /der-vertretungsplan\.de\.vu/;  // gegen Ihre eigene URL ersetzen!
 
 function addEvent(obj, evType, fn){
   if (obj.addEventListener){

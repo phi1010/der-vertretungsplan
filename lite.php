@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Der Vertretungsplan</title>
+        <title>Der Ver&shy;tre&shy;tungs&shy;plan</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="description" content="Der Vertretungsplan des Albert-Schweitzer-Gynmnasiums Erlangen" />
         <meta name="keywords" content="Vertretungsplan ASG Albert Schweitzer Gymnasium Erlangen Schule Ausfall Lehrer Schüler Information" />
@@ -30,8 +30,6 @@
         </div>
 
         <div id="footer">
-            <p>Alle Angaben ohne Gewähr.</p>
-            <p>Beim Besuch dieser Website werden IP-Adresse, Bildschirmgröße, Browserversion und ähnliche Informationen erfasst, um eine öffentliche Statistik zu erstellen.</p>
             <p>Zuletzt aktualisiert: 
                 <?php
                 $wtage = array("Sonntag",
@@ -54,6 +52,9 @@
                     </a>
                 </p>
             </noscript>
+            <p>
+                Bit&shy;te be&shy;ach&shy;ten sie die An&shy;ga&shy;ben zu Haf&shy;tung, Da&shy;ten&shy;schutz, Be&shy;trei&shy;ber und Gül&shy;tig&shy;keit auf <a href="http://der-vertretungsplan.de.vu">http://der-ver&shy;tre&shy;tungs&shy;plan.de.vu</a>.
+            </p>
         </div>
     </body>
 </html>

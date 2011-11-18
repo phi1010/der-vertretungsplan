@@ -13,7 +13,16 @@ function replacementsFilter_filter($data) {
 
     $data = array_filter($data, 'replacementsFilter_cmpDays');
 
-    return $data; //Der Rückgabewert kann ignoriert werden, ermöglicht aber eine kompaktere Schreibweise.
+    foreach ($data as $key1 => &$day) {
+        foreach ($day['Entries'] as $key2 => &$replacement) {
+            $name = $replacement['NewTeacher'];
+            if ((preg_match('#^_.*#', $name) == 0) && ($name != 'Praktikant') && ($name != 'Stillarbeit')) {
+                $replacement['NewTeacher'] = substr($name, 0, 4);
+            }
+        }
+    }
+
+    return $data;
 }
 
 ?>

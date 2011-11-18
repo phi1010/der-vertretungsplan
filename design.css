@@ -90,6 +90,7 @@ a{
 }
 #footer p{
     text-align: center;
+    margin: 3pt 0;
 }
 /* === VERTRETUNGSPLAN === */
 .bgreplacements{
