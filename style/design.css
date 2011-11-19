@@ -45,7 +45,7 @@ a{
 
 #logo
 {
-    height: 48px;
+    height: 48pt;
     float: right;
 }
 /* === MENU === */
@@ -90,7 +90,12 @@ a{
 }
 #footer p{
     text-align: center;
-    margin: 3pt 0;
+    font-size: 75%;
+    margin: 1pt 0;
+}
+#footer p:first-of-type{
+    font-size: 100%;
+    margin: 5pt 0;
 }
 /* === VERTRETUNGSPLAN === */
 .bgreplacements{
