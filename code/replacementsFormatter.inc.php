@@ -50,6 +50,7 @@ function replacementsFormatter_format($data) {
             $res .= "<th class=\"newteacher\">Vertretung</th>\n";
             $res .= "<th class=\"room\">Raum</th>\n";
             $res .= "<th class=\"newsubject\">Fach</th>\n";
+            $res .= "<th class=\"instead\">Statt</th>\n";
             $res .= "<th class=\"description\">Bemerkung</th>\n";
             $res .= "</tr>\n";
             $even = false;
@@ -63,7 +64,8 @@ function replacementsFormatter_format($data) {
                 $newteacher = $entry['NewTeacher'];
                 $newsubject = $entry['NewSubject'];
                 $room = $entry['Room'];
-                $description = $entry['Instead'] . (($entry['Instead'] != "" && $entry['Description'] != "") ? "; " : "") . $entry['Description'];
+                $instead = $entry['Instead'];
+                $description = $entry['Description'];
 
                 $res .= "<tr class=\"$eventext\">\n";
                 $res .= "<td class=\"course\">$course</td>\n";
@@ -72,6 +74,7 @@ function replacementsFormatter_format($data) {
                 $res .= "<td class=\"newteacher\">$newteacher</td>\n";
                 $res .= "<td class=\"newsubject\">$newsubject</td>\n";
                 $res .= "<td class=\"room\">$room</td>\n";
+                $res .= "<th class=\"instead\">$instead</th>\n";
                 $res .= "<td class=\"description\">$description</td>\n";
                 $res .= "</tr>\n";
             }
