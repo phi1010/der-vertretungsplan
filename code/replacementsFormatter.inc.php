@@ -74,7 +74,7 @@ function replacementsFormatter_format($data) {
                 $res .= "<td class=\"newteacher\">$newteacher</td>\n";
                 $res .= "<td class=\"newsubject\">$newsubject</td>\n";
                 $res .= "<td class=\"room\">$room</td>\n";
-                $res .= "<th class=\"instead\">$instead</th>\n";
+                $res .= "<td class=\"instead\">$instead</td>\n";
                 $res .= "<td class=\"description\">$description</td>\n";
                 $res .= "</tr>\n";
             }
