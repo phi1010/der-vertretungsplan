@@ -62,8 +62,8 @@ function replacementsFormatter_format($data) {
                 $lesson = $entry['Lesson'];
                 $oldsubject = $entry['OldSubject'];
                 $newteacher = $entry['NewTeacher'];
-                $newsubject = $entry['NewSubject'];
                 $room = $entry['Room'];
+                $newsubject = $entry['NewSubject'];
                 $instead = $entry['Instead'];
                 $description = $entry['Description'];
 
