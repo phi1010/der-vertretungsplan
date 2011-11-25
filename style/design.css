@@ -146,7 +146,7 @@ a{
     vertical-align: top;
 }
 .replacements th, .replacements td{
-    padding: 0 2pt;
+    padding: 0 3pt;
     margin: 0pt;
     vertical-align: top;
     line-height: 150%;
@@ -155,8 +155,11 @@ a{
     border-bottom:  1pt solid #888888;
 }
 .replacements .description{
-    width:100%;
+    width: 100%;
     text-align: justify;
+}
+.replacements .instead{
+    white-space:nowrap;
 }
 .replacements .odd
 {

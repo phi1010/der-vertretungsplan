@@ -48,8 +48,8 @@ function replacementsFormatter_format($data) {
             $res .= "<th class=\"lesson\">Std.</th>\n";
             $res .= "<th class=\"oldsubject\">urspr. Fach</th>\n";
             $res .= "<th class=\"newteacher\">Vertretung</th>\n";
-            $res .= "<th class=\"room\">Raum</th>\n";
             $res .= "<th class=\"newsubject\">Fach</th>\n";
+            $res .= "<th class=\"room\">Raum</th>\n";
             $res .= "<th class=\"instead\">Statt</th>\n";
             $res .= "<th class=\"description\">Bemerkung</th>\n";
             $res .= "</tr>\n";
@@ -62,8 +62,8 @@ function replacementsFormatter_format($data) {
                 $lesson = $entry['Lesson'];
                 $oldsubject = $entry['OldSubject'];
                 $newteacher = $entry['NewTeacher'];
-                $room = $entry['Room'];
                 $newsubject = $entry['NewSubject'];
+                $room = $entry['Room'];
                 $instead = $entry['Instead'];
                 $description = $entry['Description'];
 
