@@ -1,26 +1,15 @@
 <?php
 
-/**
- * Die Liste mit den URLs der Vertretungspläne.
- */
-$urls = array(
-    'Mon' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_mo.htm",
-    'Tue' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_di.htm",
-    'Wed' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_mi.htm",
-    'Thu' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_do.htm",
-    'Fri' => "http://asg-er.dyndns.org/vertretung/students/schuelerplan_fr.htm"
-);
 
 /**
  * Parst alle Vertretungspläne.
  * @global array $urls
  * @return array 
  */
-function replacementsParser_parse() {
-    global $urls;
+function replacementsParser_parseContents($contents) {
     $res = array();
-    foreach ($urls as $key => $value) {
-        $day = replacementsParser_parseURL($value);
+    foreach ($contents as $key => $value) {
+        $day = replacementsParser_parseContent($key,$value);
         if ($day != null)
             $res[$key] = $day;
     }
@@ -32,16 +21,9 @@ function replacementsParser_parse() {
  * @param string $url
  * @return array ('URL' => string, 'DateChanged' => int, 'Date' => int, 'Notices' => array(string), 'Entries' => array(array('Course' => string, 'Lesson' => string, 'OldSubject' => string, 'NewTeacher' => string, 'NewSubject' => string, 'Room' => string, 'Instead' => string, 'Description' => string))) 
  */
-function replacementsParser_parseURL($url) {
-    if ($url == null || $url == '')
-        return null;
-    $header = array();
-    $filecontent = @file_get_contents($url);
-    if ($filecontent == false || $filecontent == null || $filecontent == '')
-        return null;
-    $filecontent = preg_replace(array('#<meta([^>]*)>#i', '#<br\s*>#i'), array('', '<br/>'), $filecontent);
+function replacementsParser_parseContent($url,$content) {
     $doc = new DOMDocument();
-    $doc->loadHTML($filecontent);
+    $doc->loadHTML($content);
     if ($doc == false)
         return null;
 

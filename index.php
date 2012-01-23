@@ -1,9 +1,6 @@
 <?php
 header('content-type: text/html; charset=utf-8');
-include_once('code/replacementsParser.inc.php');
-include_once('code/replacementsFilter.inc.php');
-include_once('code/replacementsSorter.inc.php');
-include_once('code/replacementsFormatter.inc.php');
+include_once('code/replacements.inc.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -75,7 +72,7 @@ include_once('code/replacementsFormatter.inc.php');
                 <div class="col1 replacements">
                     <h1>Vertretungen:</h1>
                     <?php
-                    echo replacementsFormatter_format(replacementsSorter_sort(replacementsFilter_filter(replacementsParser_parse())));
+                    echo replacements_getHTML();
                     ?>
                 </div>
                 <div class="col2 events">
