@@ -80,13 +80,18 @@ include_once('code/replacements.inc.php');
                         Termine:</h1>
                     <p>Bitte beachten sie, dass die Termine noch nicht automatisch aktualisiert werden.</p>
                     <ul>
-                        <li><span style="font-weight: bold;">Mi, 07. Dezember, 15:00 Uhr:</span> Vorlesewettbewerb Deutsch der 6. Klassen</li>
-                        <li style="COLOR: rgb(255,0,0); FONT-WEIGHT: bold"><span style="FONT-WEIGHT: normal"><span style="FONT-WEIGHT: bold">Mi, 07. Dezember, 17:30 - 20:30 Uhr:</span> Allgemeiner Elternsprechabend</span></li>
-                        <li><span style="FONT-WEIGHT: bold">Mi, 14. Dezember, 19:00 Uhr: </span>Weihnachtskonzert in der Johanneskirche; <span style="COLOR: rgb(204,51,0)">ab <span style="FONT-WEIGHT: bold">18:00 Uhr:</span> Weihnachtsmarkt vor der Kirche</span></li>
-                        <li><span style="FONT-WEIGHT: bold">Fr, 23. Dezember, 11:15 Uhr:</span> Unterrichtsschluss vor den Weihnachtsferien</li><li><span style="font-weight: bold;">Mo, 09. Januar 2012:</span> Unterrichtsbeginn nach den Weihnachtsferien</li>
-                        <br/>
-                        <li style="font-style: italic;">Bitte vormerken:</li>
-                        <li style="COLOR: rgb(0,102,255)"><span style="FONT-WEIGHT: bold">Dienstag, 14. Februar 2012, 19:00 Uhr:</span> Informationsabend für die zukünftige 5. Jahrgangsstufe</li>
+                        <li><span style="font-weight: bold;">Mi 18. Januar, 19:30 Uhr:</span> Informationsabend der Schulberatung für Eltern und Schüler der 9./10. Klassen</li>
+                        <li><span style="font-weight: bold;">Do 26. Januar 2012, 18:00 - 20:00 Uhr:</span> Großer Präsentationsabend: Die P-Seminare der Q12 stellen ihre Ergebnisse vor</li>
+                        <li><span style="font-weight: bold;">Sa 21. - Fr 27. Januar:</span> Skilager der Klassen 8AC</li>
+                        <li><span style="font-weight: bold;">Sa 04. - Fr 10. Februar:</span> Skilager der Klassen 8EF</li>
+                        <li><span style="font-weight: bold;">Mo 06. - Do 09. Februar: </span>Betriebspraktikum der Klassen 9AB</li>
+                        <li><span style="font-weight: bold;">Mi 08. und Do 09. Februar:</span> Unterrichtsschluss 12:20 Uhr (Klassenkonferenzen)</li>
+                        <li><span style="font-weight: bold;">Mo 13. - Do 16. Februar:</span> Betriebspraktikum der Klassen 9CD</li>
+                        <li><span style="font-weight: bold;">Dienstag, 14. Februar 2012, 19:00 Uhr:</span> Informationsabend für die zukünftige 5. Jahrgangsstufe</li>
+                        <li><span style="font-weight: bold;">Fr 17. Februar, 12:20 Uhr:</span> Ausgabe der Zwischenzeugnisse</li>
+                        <li><span style="font-weight: bold;">Sa 18. - So 26. Februar:</span> Faschingsferien</li>
+                        <li><span style="font-weight: bold;">Sa 03. - Fr 09. März:</span> Skilager der Klassen 8BD</li>
+                        
                     </ul>
                     <cite>Quelle: <a href="http://asg-er.de/index.htm">http://asg-er.de/index.htm</a></cite>
                 </div>
