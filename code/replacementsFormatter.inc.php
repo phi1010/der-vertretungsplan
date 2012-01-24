@@ -105,7 +105,7 @@ function replacementsFormatter_getDayCountText($numberOfDays) {
         case 2:
             return "&Uuml;bermorgen";
         default:
-            if (abs($numberOfDays) >= 7)
+            if (abs($numberOfDays) >= 14)
                 return ($numberOfDays < 0) ? ("Vor " . (floor(-$numberOfDays / 7)) . " Wochen") : ("In " . (floor($numberOfDays / 7)) . " Wochen");
             else
                 return ($numberOfDays < 0) ? ("Vor " . (-$numberOfDays) . " Tagen") : ("In " . $numberOfDays . " Tagen");
