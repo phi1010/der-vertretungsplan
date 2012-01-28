@@ -52,7 +52,7 @@ include_once('code/replacements.inc.php');
             foreach ($files as $name)
                 if (substr($name, -strlen($fileext)) == $fileext) {
                     $text = substr($name,0, -strlen($fileext));
-                    echo "<a href=\"COPYS/$name\">$text</a><br/>\n";
+                    echo "<a href=\"http://der-vertretungsplan.de.vu/COPYS/$name\">$text</a><br/>\n";
                 }
             ?>
         </p>
