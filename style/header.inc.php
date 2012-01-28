@@ -1,16 +1,16 @@
 
 <div id="header">
     <img src="images/Calendar-256.png" id="logo" alt="Der-Vertretungsplan-Logo" />
-    <h1><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>">Der Vertretungsplan</a></h1>
+    <h1><a href="http://der-vertretungsplan.de.vu">Der Vertretungsplan</a></h1>
     <div class="menu">
         <ul>
             <!--<li><a href="#" onclick="window.location.reload();return false;">Aktualisieren</a></li>-->
             <li>
-                <a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>">Home</a>
+                <a href="http://der-vertretungsplan.de.vu">Home</a>
                 <ul>
-                    <li><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/lite.php">Lite-Version</a></li>
+                    <li><a href="http://der-vertretungsplan.de.vu/lite.php">Lite-Version</a></li>
                     <li class="seperator" />
-                    <li><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/copy.php">Ältere Vertretungspläne</a></li>
+                    <li><a href="http://der-vertretungsplan.de.vu/copy.php">Ältere Vertretungspläne</a></li>
                 </ul>
             </li>
             <li class="seperator" />
