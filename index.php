@@ -32,7 +32,7 @@ include_once('code/replacements.inc.php');
                 <div class="col2 events">
                     <h1>
                         Termine:</h1>
-                    <p>Bitte beachten sie, dass die Termine noch nicht automatisch aktualisiert werden.</p>
+                    <p>Bitte beachten Sie, dass die Termine noch nicht automatisch aktualisiert werden.</p>
                     <ul>
                         <li><span style="font-weight: bold;">Mi 18. Januar, 19:30 Uhr:</span> Informationsabend der Schulberatung für Eltern und Schüler der 9./10. Klassen</li>
                         <li><span style="font-weight: bold;">Do 26. Januar 2012, 18:00 - 20:00 Uhr:</span> Großer Präsentationsabend: Die P-Seminare der Q12 stellen ihre Ergebnisse vor</li>

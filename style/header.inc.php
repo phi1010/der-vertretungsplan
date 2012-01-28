@@ -1,34 +1,36 @@
 
 <div id="header">
     <img src="images/Calendar-256.png" id="logo" alt="Der-Vertretungsplan-Logo" />
-    <h1><a href="http://<?php echo $_SERVER['HTTP_HOST'];?>">Der Vertretungsplan</a></h1>
+    <h1><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>">Der Vertretungsplan</a></h1>
     <div class="menu">
         <ul>
             <!--<li><a href="#" onclick="window.location.reload();return false;">Aktualisieren</a></li>-->
             <li>
-                <a href="http://<?php echo $_SERVER['HTTP_HOST'];?>">Home</a>
+                <a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>">Home</a>
                 <ul>
-                    <li><a href="http://<?php echo $_SERVER['HTTP_HOST'];?>/copy.php">Historische Vertretungspläne</a></li>
-
+                    <li><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/lite.php">Lite-Version</a></li>
+                    <li class="seperator" />
+                    <li><a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/copy.php">Ältere Vertretungspläne</a></li>
                 </ul>
             </li>
             <li class="seperator" />
-            <li><a href="#" id="current">Mitwirken</a>
+            <li><a href="#" id="current">Über uns</a>
                 <ul>
                     <li><a href="http://webchat.esper.net/?channels=#vertretungsplan">Webchat @ esper.net</a></li>
                     <li class="seperator" />
-                    <!--<li><a href="#">IRC @esper.net</a></li>-->
-                    <li><a href="https://github.com/phi1010/der-vertretungsplan">Quell&shy;code&shy;hosting
-                            @ Git&shy;Hub</a></li>
-
+                    <li><a href="https://github.com/phi1010/der-vertretungsplan">Quellcode @ GitHub</a></li>
+                    <li class="seperator"/>
+                    <li><a href="http://mineworkers.net">Hosting @ mineworkers.net</a></li>
                 </ul>
             </li>
             <li class="seperator" />
             <li><a href="#">Links</a>
                 <ul>
-                    <li><a href="http://asg-er.dyndns.org/vertretung/">ASG Vertretungs&shy;plan</a></li>
+                    <li><a href="http://asg-er.dyndns.org/vertretung/">ASG Vertretungsplan</a></li>
                     <li class="seperator" />
                     <li><a href="http://asg-er.de/">ASG Homepage</a></li>
+                    <li class="seperator"/>
+                    <li><a href="https://www.facebook.com/der.vertretungsplan">Facebook Fanpage</a></li>
                     <li class="seperator"/>
                     <li>
                         <script type="text/javascript" src="http://logging.ourstats.de/js.php?ID=719764&amp;style=blue">

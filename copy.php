@@ -22,7 +22,7 @@ include_once('code/replacements.inc.php');
         include("style/header.inc.php");
         ?>
         <div class="copy colmask">
-        <h1>Historische Vertretungspläne:</h1>
+        <h1>Ältere Vertretungspläne:</h1>
         <p>Bitte beachten Sie, dass nur Vertretungspläne angezeigt werden, die über diese Seite bereits abgerufen wurden.</p>
         <p>Die Vertretungspläne sind sortiert nach Datum und letzter Änderung:</p>
         <p class="list">

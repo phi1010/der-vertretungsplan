@@ -48,36 +48,7 @@ a{
     height: 48pt;
     float: right;
 }
-/* === MENU === */
-.menu{
-    font-size: 14pt;
-}
-.menu ul{
-    background-color:#333333;
-}
-.menu li ul{
-    background-color:#333333;
-}
-.menu li a{
-    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
-    -moz-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
-    -o-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
-    -webkit-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
-    background-color: #333333;
-    color:#FFFFFF;
-}
-.menu li a:hover, .menu ul li:hover a{
-    background-color: #222222;
-    color:#ffffff;
-}
-.menu li ul a:hover, .menu li ul li:hover a{
-    background-color: #222222;
-    color:#ffffff;
-}
-.menu li:hover li a{
-    color:#FFFFFF;
-    background-color:#333333;
-}
+
 /* === FOOTER === */
 #footer{
     text-align: center;

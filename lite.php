@@ -19,7 +19,7 @@ include_once('code/replacements.inc.php');
     </head>
     <body>
         <div id="header">
-            <a href="http://der-vertretungsplan.de.vu"><h1>Der Vertretungsplan</h1></a>
+            <a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>"><h1>Der Vertretungsplan</h1></a>
         </div>
         <div class="content bgreplacements replacements">
             <?php
@@ -51,7 +51,7 @@ include_once('code/replacements.inc.php');
                 </p>
             </noscript>
             <p>
-                Bit&shy;te be&shy;ach&shy;ten sie die An&shy;ga&shy;ben zu Haf&shy;tung, Da&shy;ten&shy;schutz, Be&shy;trei&shy;ber und Gül&shy;tig&shy;keit auf <a href="http://der-vertretungsplan.de.vu">http://der-ver&shy;tre&shy;tungs&shy;plan.de.vu</a>.
+                Bit&shy;te be&shy;ach&shy;ten Sie die An&shy;ga&shy;ben zu Haf&shy;tung, Da&shy;ten&shy;schutz, Be&shy;trei&shy;ber und Gül&shy;tig&shy;keit auf <a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>">http://<?php echo $_SERVER['HTTP_HOST']; ?></a>.
             </p>
         </div>
     </body>

@@ -1,9 +1,11 @@
 .menu{
+    font-size: 14pt;
     padding:0px;
     font-weight:bold;
     margin: 0;
 }
 .menu ul{
+    background-color:#333333;
     height:24pt;
     list-style:none;
     margin: 0;
@@ -14,6 +16,12 @@
     padding:0px;
 }
 .menu li a{
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+    -moz-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+    -o-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+    -webkit-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+    background-color: #333333;
+    color:#FFFFFF;
     display:block;
     font-weight:normal;
     line-height:24pt;
@@ -22,17 +30,20 @@
     text-decoration: none;
 }
 .menu li.seperator{
-    background: url("images/sep_h.gif");
-    background-position:  bottom center;
+    background: url("../images/sep_h.gif");
+    background-position:  bottom right;
     width: 1px;
     height: 24pt;
 }
 .menu li a:hover, .menu ul li:hover a{
-    background-image: url("images/hover_h.png");
+    background-color: #171717;
+    color:#ffffff;
+    background-image: url("../images/hover_h.png");
     background-position:  bottom center;
     background-repeat:  no-repeat;
 }
 .menu li ul{
+    background-color:#333333;
     display:block;
     height:0;
     overflow:hidden;
@@ -57,7 +68,7 @@
     width:200pt;
 }
 .menu li li.seperator{
-    background: url("images/sep_v.gif") bottom left no-repeat;
+    background: url("../images/sep_v.gif") bottom left no-repeat;
     width: 100pt;
     height: 1px;
 }
@@ -70,14 +81,17 @@
     text-align:left;
 }
 .menu li ul a:hover, .menu li ul li:hover a{
-    background-image: url('images/hover_v.png');
+    background-color: #171717;
+    color:#ffffff;
+    background-image: url('../images/hover_v.png');
     background-position: center left;
     background-repeat: no-repeat;
 }
 .menu li:hover li a{
+    color:#FFFFFF;
+    background-color:#333333;
     background-image: none;
 }
 .menu p{
     clear:left;
 }	
-
