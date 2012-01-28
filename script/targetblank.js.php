@@ -1,4 +1,4 @@
-var ownurlpatt = /der-vertretungsplan\.de\.vu/;  // gegen Ihre eigene URL ersetzen!
+var ownurlpatt = /<?php echo str_replace(".","\.",$_SERVER['HTTP_HOST']);?>/; // "/der-vertretungsplan\.de\.vu/"
 
 function addEvent(obj, evType, fn){
   if (obj.addEventListener){

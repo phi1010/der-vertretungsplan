@@ -180,3 +180,20 @@ a{
 .events li{
     margin: 3pt 0;
 }
+/* === KOPIEN === */
+.copy{
+    text-align: center;
+    padding-bottom: 6pt;
+}
+.copy h2~h2 { 
+    margin-top: 1in;
+}
+.copy p{
+    text-align: center;
+}
+.copy .list{
+    font-family: monospace
+}
+.copy .list a{
+    text-decoration: none
+}
