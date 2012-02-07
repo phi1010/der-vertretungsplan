@@ -1,5 +1,22 @@
 <?php
 
+function replacementsSorter_cmpDays($a, $b) {
+    if ($a['Date'] == $b['Date']) {
+        return 0;
+    }
+    return ($a['Date'] < $b['Date']) ? -1 : 1;
+}
+
+function replacementsSorter_cmpEntries($a, $b) {
+    $res = strnatcmp($a['Course'], $b['Course']);
+    if ($res == 0) {
+        $res = strnatcmp($a['Lesson'], $b['Lesson']);
+        if ($res == 0) {
+            $res = strnatcmp($a['OldSubject'], $b['OldSubject']);
+        }
+    }
+    return $res;
+}
 
 /**
  * Sortiert die Tage nach Datum und die Vertretungen nach Klasse, Stunde und Fach.
@@ -8,23 +25,6 @@
  */
 function replacementsSorter_sort($data) {
 
-    function replacementsSorter_cmpDays($a, $b) {
-        if ($a['Date'] == $b['Date']) {
-            return 0;
-        }
-        return ($a['Date'] < $b['Date']) ? -1 : 1;
-    }
-
-    function replacementsSorter_cmpEntries($a, $b) {
-        $res = strnatcmp($a['Course'], $b['Course']);
-        if ($res == 0) {
-            $res = strnatcmp($a['Lesson'], $b['Lesson']);
-            if ($res == 0) {
-                $res = strnatcmp($a['OldSubject'], $b['OldSubject']);
-            }
-        }
-        return $res;
-    }
 
     uasort($data, 'replacementsSorter_cmpDays');
     foreach ($data as $day) {

@@ -22,40 +22,14 @@ include_once('code/replacements.inc.php');
         include("style/header.inc.php");
         ?>
         <div class="copy colmask">
-        <h1>Ältere Vertretungspläne:</h1>
-        <p>Bitte beachten Sie, dass nur Vertretungspläne angezeigt werden, die über diese Seite bereits abgerufen wurden.</p>
-        <p>Die Vertretungspläne sind sortiert nach Datum und letzter Änderung:</p>
-        <p class="list">
-            YYYY-MM-DD YYYY-MM-DD-hh-mm ----------- MD5 HASH -----------<br/>
-            ==========|================|================================<br/>
+            <h1>Ältere Vertretungspläne:</h1>
+            <p>Bitte beachten Sie, dass nur Vertretungspläne angezeigt werden, die über diese Seite bereits abgerufen wurden.</p>
+            <p>Die Vertretungspläne sind sortiert nach Datum und letzter Änderung:</p>
+
             <?php
-            $files = array();
-
-            /* open the current directory by opendir */
-            if ($handle = opendir('./COPYS')) {
-
-                /* as long as there is another file, read its path and store to $file */
-                while (false !== ($file = readdir($handle))) {
-
-                    /* do not list '.', '..', or 'index.php' */
-                    if ($file != "." && $file != ".." && $file != "index.php") {
-
-                        $files[] = $file;
-                    }
-                }
-
-                closedir($handle);
-            }
-
-            asort($files);
-            $fileext = ".html";
-            foreach ($files as $name)
-                if (substr($name, -strlen($fileext)) == $fileext) {
-                    $text = substr($name,0, -strlen($fileext));
-                    echo "<a href=\"http://der-vertretungsplan.de.vu/COPYS/$name\">$text</a><br/>\n";
-                }
+            include("code/log.inc.php");
+            echo log_getHTML();
             ?>
-        </p>
         </div>
         <?php
         include("style/footer.inc.php");

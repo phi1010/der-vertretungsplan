@@ -159,12 +159,25 @@ a{
 .copy h2~h2 { 
     margin-top: 1in;
 }
+.copy li~li { 
+    margin-top: 10pt;
+}
+.copy li li~li { 
+    margin-top: 0;
+}
+.copy .list{
+    text-align: center;
+    list-style: none;
+}
 .copy p{
     text-align: center;
 }
-.copy .list{
-    font-family: monospace
+.copy .list ul{
+    text-align: center;
+    list-style: none;
+    font-family: monospace;
 }
+
 .copy .list a{
-    text-decoration: none
+    text-decoration: none;
 }
