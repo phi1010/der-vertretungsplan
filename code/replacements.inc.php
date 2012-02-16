@@ -8,8 +8,7 @@ include_once('code/replacementsQuery.inc.php');
 include_once('code/replacementsLogger.inc.php');
 include_once('code/replacementsPreprocessor.inc.php');
 
-function replacements_getHTML()
-{
+function replacements_getHTML() {
     $contents = replacementsQuery_getContents();
     $contents2 = replacementsPreprocessor_process($contents);
     $data = replacementsParser_parseContents($contents2);
@@ -19,5 +18,4 @@ function replacements_getHTML()
     $output = replacementsFormatter_format($data);
     return $output;
 }
-
 ?>

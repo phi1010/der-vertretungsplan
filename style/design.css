@@ -77,10 +77,13 @@ a{
     text-align: center;
     padding-bottom: 6pt;
 }
+.replacements p{
+    text-align: center;
+}
 .replacements h2{
     font-family: "Cambria","Times",serif;
 }
-.replacements h2~h2 { 
+.replacements h2~h2{
     margin-top: 1in;
 }
 .replacements ul{

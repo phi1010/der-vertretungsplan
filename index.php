@@ -1,6 +1,5 @@
 <?php
 header('content-type: text/html; charset=utf-8');
-include_once('code/replacements.inc.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -16,6 +15,19 @@ include_once('code/replacements.inc.php');
         <link rel="stylesheet" type="text/css" href="style/menu.css" />
         <link rel="stylesheet" type="text/css" href="style/design.css" />
         <script type="text/javascript" src="script/targetblank.js.php"></script>
+        <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#js_content").hide();
+                $("#js_content").load('replacements.ajax.php',"",function()
+                {
+                    $("#js_status").fadeOut("slow",function()
+                    {
+                        $("#js_content").fadeIn("slow");
+                    });
+                });
+            });
+        </script>
     </head>
     <body>
         <?php
@@ -25,9 +37,14 @@ include_once('code/replacements.inc.php');
             <div class="colleft bgreplacements">
                 <div class="col1 replacements">
                     <h1>Vertretungen:</h1>
-                    <?php
-                    echo replacements_getHTML();
-                    ?>
+                    <div id="js_status">
+                        <img src="images/ajax-loader.gif" alt="Loading..."/>
+                        <p>Die Vertretungspläne werden geladen...</p>
+                    </div>
+                    <noscript>
+                        <p>Bitte aktivieren sie JavaScript, um die Vertretungspläne zu laden.<br/>Alternativ können sie auch unsere <a href="http://der-vertretungsplan.de.vu/lite.php">Lite-Version</a> verwenden.</p>
+                    </noscript>
+                    <div id="js_content"></div>
                 </div>
                 <div class="col2 events">
                     <h1>
